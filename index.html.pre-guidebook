@@ -12,13 +12,13 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#0e0c09">
-<link rel="canonical" href="https://www.thelegendsoftherealm.com/">
+<link rel="canonical" href="https://thelegendsoftherealm.com/">
 <!-- Open Graph -->
 <meta property="og:type" content="product">
 <meta property="og:title" content="Legends of the Realm — A 78-Card Tarot Deck">
 <meta property="og:description" content="Hand-illustrated by visionary artists. 78 cards, gilded gold edges, premium card stock. First edition — only 250 sets.">
-<meta property="og:image" content="https://www.thelegendsoftherealm.com/cards/the-star.jpg">
-<meta property="og:url" content="https://www.thelegendsoftherealm.com/">
+<meta property="og:image" content="https://thelegendsoftherealm.com/cards/the-star.jpg">
+<meta property="og:url" content="https://thelegendsoftherealm.com/">
 <meta property="og:site_name" content="Legends of the Realm">
 <meta property="product:price:amount" content="39.95">
 <meta property="product:price:currency" content="EUR">
@@ -26,14 +26,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Legends of the Realm — A 78-Card Tarot Deck">
 <meta name="twitter:description" content="Hand-illustrated by visionary artists. 78 cards, gilded gold edges, premium card stock. First edition — only 250 sets.">
-<meta name="twitter:image" content="https://www.thelegendsoftherealm.com/cards/the-star.jpg">
+<meta name="twitter:image" content="https://thelegendsoftherealm.com/cards/the-star.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Product",
   "name": "Legends of the Realm — A 78-Card Tarot Deck",
-  "description": "Hand-illustrated 78-card tarot deck by PsychicWorld. 22 Major Arcana and 56 Minor Arcana across Cups, Swords, Wands, and Pentacles. Premium 310gsm black-core cardstock with linen finish and gilded gold edges. Includes a complete guidebook explaining every card — upright and reversed meanings, the symbolism behind the artwork, and step-by-step spreads. Available in English, French and Dutch. First edition limited to 250 hand-numbered sets.",
-  "image": "https://www.thelegendsoftherealm.com/cards/the-star.jpg",
+  "description": "Hand-illustrated 78-card tarot deck by PsychicWorld. 22 Major Arcana and 56 Minor Arcana across Cups, Swords, Wands, and Pentacles. Premium 310gsm black-core cardstock with linen finish and gilded gold edges. First edition limited to 250 hand-numbered sets.",
+  "image": "https://thelegendsoftherealm.com/cards/the-star.jpg",
   "brand": {
     "@type": "Brand",
     "name": "PsychicWorld"
@@ -87,11 +87,6 @@
     },
     {
       "@type": "PropertyValue",
-      "name": "Included",
-      "value": "Complete guidebook — every card explained, with symbolism and step-by-step spreads"
-    },
-    {
-      "@type": "PropertyValue",
       "name": "Packaging",
       "value": "Custom rigid telescope box"
     }
@@ -109,7 +104,7 @@
     "@type": "Organization",
     "name": "Consulto B.V.",
     "url": "https://www.psychicworld.com",
-    "logo": "https://www.thelegendsoftherealm.com/icons/icon-512.png"
+    "logo": "https://thelegendsoftherealm.com/icons/icon-512.png"
   },
   "breadcrumb": {
     "@type": "BreadcrumbList",
@@ -899,13 +894,6 @@ footer a:hover { color: var(--gold-light); }
         <p data-i18n="box4Desc">Custom-designed two-piece rigid box with original artwork. A keepsake that protects and presents your deck beautifully.</p>
       </div>
     </div>
-    <div class="box-item">
-      <span class="bi-icon">📖</span>
-      <div>
-        <h4 data-i18n="box5Title">Complete Guidebook</h4>
-        <p data-i18n="box5Desc">A full explanation of the deck and how to use it — every card's upright and reversed meanings, the symbolism behind the artwork, and step-by-step spreads so you can read from the day it arrives.</p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -946,9 +934,7 @@ footer a:hover { color: var(--gold-light); }
         <li data-i18n="priceLi3">Gilded gold edges on every card</li>
         <li data-i18n="priceLi4">Custom rigid telescope box</li>
         <li data-i18n="priceLi5">Shrink-wrapped for protection</li>
-        <li data-i18n="priceLi6">Complete guidebook — every card explained</li>
-        <li data-i18n="priceLi7">Choose English, Français or Nederlands</li>
-        <li data-i18n="priceLi8">Priced in your local currency at checkout</li>
+        <li data-i18n="priceLi6">Available in EN, FR, or NL</li>
       </ul>
       <div class="edition-pick">
         <span data-i18n="editionPick">Choose your edition</span>
@@ -1063,11 +1049,7 @@ const T = {
     priceLi3: "Gilded gold edges on every card",
     priceLi4: "Custom rigid telescope box",
     priceLi5: "Shrink-wrapped for protection",
-    box5Title: "Complete Guidebook",
-    box5Desc: "A full explanation of the deck and how to use it — every card’s upright and reversed meanings, the symbolism behind the artwork, and step-by-step spreads so you can read from the day it arrives.",
-    priceLi6: "Complete guidebook — every card explained",
-    priceLi7: "Choose English, Français or Nederlands",
-    priceLi8: "Priced in your local currency at checkout",
+    priceLi6: "Available in EN, FR, or NL",
     priceCta: "Pre-Order Now",
     limitedNote: "Only 250 sets in this first edition run. Once they’re gone, they’re gone."
   },
@@ -1141,11 +1123,7 @@ const T = {
     priceLi3: "Tranches dorées sur chaque carte",
     priceLi4: "Boîte rigide télescopique sur mesure",
     priceLi5: "Emballage sous film protecteur",
-    box5Title: "Livret Complet",
-    box5Desc: "Une explication complète du jeu et de son utilisation — les significations à l’endroit et à l’envers de chaque carte, le symbolisme des illustrations, et des tirages pas à pas pour lire dès le jour de la réception.",
-    priceLi6: "Livret complet — chaque carte expliquée",
-    priceLi7: "Au choix : English, Français ou Nederlands",
-    priceLi8: "Prix affiché dans votre devise locale",
+    priceLi6: "Disponible en EN, FR ou NL",
     priceCta: "Pré-Commander Maintenant",
     limitedNote: "Seulement 250 coffrets dans cette première édition. Une fois épuisés, c’est terminé."
   },
@@ -1219,11 +1197,7 @@ const T = {
     priceLi3: "Vergulde gouden randen op elke kaart",
     priceLi4: "Op maat gemaakte rigide telescoopdoos",
     priceLi5: "Krimpfolie verpakt ter bescherming",
-    box5Title: "Volledig Handboek",
-    box5Desc: "Een volledige uitleg van het deck en hoe u het gebruikt — de betekenis van elke kaart rechtop en omgekeerd, de symboliek achter de illustraties, en stap-voor-stap legpatronen zodat u vanaf dag één kunt lezen.",
-    priceLi6: "Volledig handboek — elke kaart uitgelegd",
-    priceLi7: "Kies English, Français of Nederlands",
-    priceLi8: "Prijs in uw eigen valuta bij het afrekenen",
+    priceLi6: "Beschikbaar in EN, FR of NL",
     priceCta: "Nu Pre-Orderen",
     limitedNote: "Slechts 250 sets in deze eerste editie. Op is op."
   }
