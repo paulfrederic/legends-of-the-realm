@@ -351,6 +351,9 @@ section {
 
 .arcana-card .card-img {
   width: 100%;
+  height: auto;
+  aspect-ratio: 340 / 582;
+  object-fit: cover;
   border-radius: 4px;
   margin-bottom: 1rem;
   border: 1px solid var(--border);
@@ -616,8 +619,31 @@ footer a:hover { color: var(--gold-light); }
 }
 
 @media (max-width: 480px) {
-  .arcana-grid { grid-template-columns: 1fr; max-width: 280px; margin-left: auto; margin-right: auto; }
-  .card-fan-item { width: 110px; }
+  /* two columns, not one: 22 cards in a single column is a 13,500px scroll */
+  .arcana-grid { grid-template-columns: repeat(2, 1fr); gap: 0.9rem; }
+  .arcana-card.has-image { padding: 0.6rem 0.6rem 1rem; }
+  .arcana-card.has-image .card-name { font-size: 0.82rem; }
+  .arcana-card.has-image .card-meaning { font-size: 0.72rem; }
+  /* the fan is rotated, so its bounding box is wider than the cards */
+  .card-fan-item { width: 84px; }
+}
+
+/* rotated fan must never push the page wider than the viewport */
+.about-visual { max-width: 100%; overflow-x: clip; }
+.about-grid { min-width: 0; }
+.about-text, .about-visual { min-width: 0; }
+
+/* ─── mobile: reveal the full Major Arcana on demand ─── */
+.arcana-more { display: none; }
+@media (max-width: 700px) {
+  .arcana-grid.is-collapsed .arcana-card:nth-child(n+9) { display: none; }
+  .arcana-more {
+    display: inline-block; margin: 1.75rem auto 0; padding: 0.8rem 1.6rem;
+    background: transparent; border: 1px solid var(--gold); border-radius: 5px;
+    color: var(--gold-pale); font-family: 'Cinzel', serif; font-size: 0.78rem;
+    letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;
+  }
+  .arcana-more:hover { background: var(--gold-glow); }
 }
 
 /* ─── LANGUAGE SWITCHER ─── */
@@ -766,7 +792,7 @@ footer a:hover { color: var(--gold-light); }
     <h2 class="section-title" data-i18n="arcanaTitle">The Major Arcana</h2>
     <p class="section-lead" data-i18n="arcanaLead">22 cards charting the soul's great journey</p>
 
-    <div class="arcana-grid">
+    <div class="arcana-grid is-collapsed" id="arcanaGrid">
       <div class="arcana-card has-image">
         <img class="card-img" data-ci="0" src="cards/sm/en/major-arcana/0-the-fool.jpg" alt="The Fool" width="340" height="582">
         <span class="card-num">0</span>
@@ -900,6 +926,7 @@ footer a:hover { color: var(--gold-light); }
         <span class="card-meaning" data-i18n="c21Mean">Completion, fulfilment, wholeness</span>
       </div>
     </div>
+    <button class="arcana-more" id="arcanaMore" data-i18n="showAll" aria-expanded="false">Show all 22 cards</button>
     </div>
   </div>
 </div>
@@ -1066,6 +1093,8 @@ const T = {
     aboutP3: 'Created by the team behind <strong>PsychicWorld.com</strong> — the world’s leading live psychic guidance platform — this deck carries the energy of thousands of real readings, real seekers, and real transformations.',
     arcanaTitle: "The Major Arcana",
     arcanaLead: "22 cards charting the soul’s great journey",
+    showAll: "Show all 22 cards",
+    showLess: "Show fewer cards",
     c0Name: "The Fool", c0Mean: "New beginnings, innocence, a leap of faith",
     c1Name: "The Magician", c1Mean: "Manifestation, willpower, resourcefulness",
     c2Name: "The High Priestess", c2Mean: "Intuition, mystery, the subconscious",
@@ -1140,6 +1169,8 @@ const T = {
     aboutP3: 'Créé par l’équipe derrière <strong>PsychicWorld.com</strong> — la première plateforme mondiale de guidance psychique en direct — ce jeu porte l’énergie de milliers de tirages réels, de vrais chercheurs et de vraies transformations.',
     arcanaTitle: "Les Arcanes Majeurs",
     arcanaLead: "22 cartes traçant le grand voyage de l’âme",
+    showAll: "Voir les 22 cartes",
+    showLess: "Voir moins de cartes",
     c0Name: "Le Fou", c0Mean: "Nouveaux départs, innocence, un saut dans l’inconnu",
     c1Name: "Le Bateleur", c1Mean: "Manifestation, volonté, ingéniosité",
     c2Name: "La Papesse", c2Mean: "Intuition, mystère, l’inconscient",
@@ -1214,6 +1245,8 @@ const T = {
     aboutP3: 'Gecreëerd door het team achter <strong>PsychicWorld.com</strong> — het toonaangevende platform voor live paragnostische begeleiding — draagt dit deck de energie van duizenden echte lezingen, echte zoekers en echte transformaties.',
     arcanaTitle: "De Grote Arcana",
     arcanaLead: "22 kaarten die de grote reis van de ziel in kaart brengen",
+    showAll: "Bekijk alle 22 kaarten",
+    showLess: "Toon minder kaarten",
     c0Name: "De Dwaas", c0Mean: "Nieuw begin, onschuld, een sprong in het diepe",
     c1Name: "De Magiër", c1Mean: "Manifestatie, wilskracht, vindingrijkheid",
     c2Name: "De Hogepriesteres", c2Mean: "Intuïtie, mysterie, het onderbewuste",
@@ -1402,6 +1435,17 @@ function initCommerce() {
   });
 
   refreshCommerce();
+
+  const grid = document.getElementById('arcanaGrid');
+  const more = document.getElementById('arcanaMore');
+  if (grid && more) {
+    more.addEventListener('click', () => {
+      const collapsed = grid.classList.toggle('is-collapsed');
+      more.setAttribute('aria-expanded', String(!collapsed));
+      more.textContent = t(collapsed ? 'showAll' : 'showLess');
+      if (collapsed) grid.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  }
 }
 
 const CARD_SLUGS = {
@@ -1421,6 +1465,9 @@ function setLang(lang) {
     const k = el.dataset.i18nPh;
     if (T[lang] && T[lang][k]) el.placeholder = T[lang][k];
   });
+  const _more = document.getElementById('arcanaMore'), _grid = document.getElementById('arcanaGrid');
+  if (_more && _grid) _more.textContent =
+    (T[lang] || T.en)[_grid.classList.contains('is-collapsed') ? 'showAll' : 'showLess'];
   const _picked = document.querySelector('input[name="edition"]:checked');
   if (_picked && !_picked.dataset.userSet) {
     const r = document.querySelector('input[name="edition"][value="' + lang + '"]');
