@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Legends of the Realm: A PsychicWorld Tarot Deck</title>
+<title>Legends of the Realm — A PsychicWorld Tarot Deck</title>
 <meta name="description" content="Hand-illustrated 78-card tarot deck by PsychicWorld. Premium 310gsm black-core cardstock with gilded gold edges. First edition limited to 250 sets. €39.95 with free European shipping.">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
@@ -15,8 +15,8 @@
 <link rel="canonical" href="https://www.thelegendsoftherealm.com/">
 <!-- Open Graph -->
 <meta property="og:type" content="product">
-<meta property="og:title" content="Legends of the Realm: A 78-Card Tarot Deck">
-<meta property="og:description" content="Hand-illustrated by visionary artists. 78 cards, gilded gold edges, premium card stock. First edition, only 250 sets.">
+<meta property="og:title" content="Legends of the Realm — A 78-Card Tarot Deck">
+<meta property="og:description" content="Hand-illustrated by visionary artists. 78 cards, gilded gold edges, premium card stock. First edition — only 250 sets.">
 <meta property="og:image" content="https://www.thelegendsoftherealm.com/cards/the-star.jpg">
 <meta property="og:url" content="https://www.thelegendsoftherealm.com/">
 <meta property="og:site_name" content="Legends of the Realm">
@@ -24,15 +24,15 @@
 <meta property="product:price:currency" content="EUR">
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Legends of the Realm: A 78-Card Tarot Deck">
-<meta name="twitter:description" content="Hand-illustrated by visionary artists. 78 cards, gilded gold edges, premium card stock. First edition, only 250 sets.">
+<meta name="twitter:title" content="Legends of the Realm — A 78-Card Tarot Deck">
+<meta name="twitter:description" content="Hand-illustrated by visionary artists. 78 cards, gilded gold edges, premium card stock. First edition — only 250 sets.">
 <meta name="twitter:image" content="https://www.thelegendsoftherealm.com/cards/the-star.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Product",
-  "name": "Legends of the Realm: A 78-Card Tarot Deck",
-  "description": "Hand-illustrated 78-card tarot deck by PsychicWorld. 22 Major Arcana and 56 Minor Arcana across Cups, Swords, Wands, and Pentacles. Premium 310gsm black-core cardstock with linen finish and gilded gold edges. Includes a complete guidebook explaining every card: upright and reversed meanings, the symbolism behind the artwork, and step-by-step spreads. Available in English, French and Dutch. First edition limited to 250 hand-numbered sets.",
+  "name": "Legends of the Realm — A 78-Card Tarot Deck",
+  "description": "Hand-illustrated 78-card tarot deck by PsychicWorld. 22 Major Arcana and 56 Minor Arcana across Cups, Swords, Wands, and Pentacles. Premium 310gsm black-core cardstock with linen finish and gilded gold edges. Includes a complete guidebook explaining every card — upright and reversed meanings, the symbolism behind the artwork, and step-by-step spreads. Available in English, French and Dutch. First edition limited to 250 hand-numbered sets.",
   "image": "https://www.thelegendsoftherealm.com/cards/the-star.jpg",
   "brand": {
     "@type": "Brand",
@@ -78,7 +78,7 @@
     {
       "@type": "PropertyValue",
       "name": "Edition",
-      "value": "First Edition, limited to 250 sets"
+      "value": "First Edition — Limited to 250 sets"
     },
     {
       "@type": "PropertyValue",
@@ -88,7 +88,7 @@
     {
       "@type": "PropertyValue",
       "name": "Included",
-      "value": "Complete guidebook with every card explained, including symbolism and step-by-step spreads"
+      "value": "Complete guidebook — every card explained, with symbolism and step-by-step spreads"
     },
     {
       "@type": "PropertyValue",
@@ -103,7 +103,7 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Legends of the Realm: A PsychicWorld Tarot Deck",
+  "name": "Legends of the Realm — A PsychicWorld Tarot Deck",
   "description": "Pre-order the first edition of Legends of the Realm, a hand-illustrated 78-card tarot deck by PsychicWorld. Limited to 250 sets.",
   "publisher": {
     "@type": "Organization",
@@ -338,31 +338,27 @@ section {
 
 .arcana-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-top: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
 .arcana-card {
-  background: linear-gradient(180deg, #272317 0%, #14110c 100%);
-  border: 2px solid rgba(196, 162, 101, 0.42);
-  border-radius: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
   padding: 2rem 1.2rem;
   text-align: center;
-  position: relative;
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55),
-              inset 0 1px 0 rgba(232, 213, 168, 0.10);
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
 }
 .arcana-card.has-image {
   padding: 1rem 1rem 1.5rem;
 }
 .arcana-card:hover {
-  border-color: var(--gold-light);
-  transform: translateY(-6px);
-  box-shadow: 0 22px 50px rgba(0, 0, 0, 0.65),
-              0 0 0 1px rgba(212, 184, 120, 0.35),
-              inset 0 1px 0 rgba(232, 213, 168, 0.16);
+  background: var(--bg-card-hover);
+  border-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.4);
 }
 
 .arcana-card .card-img {
@@ -370,13 +366,12 @@ section {
   height: auto;
   aspect-ratio: 340 / 582;
   object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 1.15rem;
-  border: 1px solid rgba(196, 162, 101, 0.55);
-  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
   transition: border-color 0.3s ease;
 }
-.arcana-card:hover .card-img { border-color: var(--gold-light); }
+.arcana-card:hover .card-img { border-color: var(--gold); }
 
 .arcana-card .card-num {
   font-family: 'Cinzel', serif;
@@ -388,18 +383,8 @@ section {
   margin-bottom: 0.5rem;
 }
 .arcana-card.has-image .card-num {
-  font-size: 1.45rem;
-  color: var(--gold-light);
-  letter-spacing: 0.08em;
-  margin-bottom: 0.45rem;
-}
-.arcana-card.has-image .card-num::after {
-  content: "";
-  display: block;
-  width: 34px;
-  height: 1px;
-  margin: 0.5rem auto 0;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
 }
 
 .arcana-card .card-name {
@@ -412,17 +397,15 @@ section {
   margin-bottom: 0.8rem;
 }
 .arcana-card.has-image .card-name {
-  font-size: 1.08rem;
-  color: var(--gold-pale);
-  letter-spacing: 0.07em;
-  margin-bottom: 0.55rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
 .arcana-card .card-meaning {
   font-size: 0.95rem;
   font-style: italic;
-  color: var(--text);
-  line-height: 1.55;
+  color: var(--text-dim);
+  line-height: 1.5;
 }
 .arcana-card.has-image .card-meaning {
   font-size: 0.85rem;
@@ -644,16 +627,15 @@ footer a:hover { color: var(--gold-light); }
   .about-grid { grid-template-columns: 1fr; }
   .box-contents { grid-template-columns: 1fr; }
   .about-visual { margin-top: 2rem; }
-  .arcana-grid { grid-template-columns: repeat(2, 1fr); gap: 1.4rem; }
+  .arcana-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 480px) {
   /* two columns, not one: 22 cards in a single column is a 13,500px scroll */
-  .arcana-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-  .arcana-card.has-image { padding: 0.7rem 0.7rem 1.1rem; }
-  .arcana-card.has-image .card-num { font-size: 1.1rem; }
-  .arcana-card.has-image .card-name { font-size: 0.9rem; }
-  .arcana-card.has-image .card-meaning { font-size: 0.78rem; }
+  .arcana-grid { grid-template-columns: repeat(2, 1fr); gap: 0.9rem; }
+  .arcana-card.has-image { padding: 0.6rem 0.6rem 1rem; }
+  .arcana-card.has-image .card-name { font-size: 0.82rem; }
+  .arcana-card.has-image .card-meaning { font-size: 0.72rem; }
   /* the fan is rotated, so its bounding box is wider than the cards */
   .card-fan-item { width: 84px; }
 }
@@ -789,8 +771,8 @@ footer a:hover { color: var(--gold-light); }
         detail that rewards every reading.
       </p>
       <p data-i18n="aboutP3">
-        Created by the team behind <strong>PsychicWorld.com</strong>, the
-        world's leading live psychic guidance platform, and this deck carries the
+        Created by the team behind <strong>PsychicWorld.com</strong> — the
+        world's leading live psychic guidance platform — this deck carries the
         energy of thousands of real readings, real seekers, and real
         transformations.
       </p>
@@ -812,37 +794,37 @@ footer a:hover { color: var(--gold-light); }
 
     <div class="arcana-grid" id="arcanaGrid">
       <div class="arcana-card has-image">
-        <img class="card-img" data-ci="0" src="cards/sm/en/major-arcana/0-the-fool.jpg" srcset="cards/sm/en/major-arcana/0-the-fool.jpg 340w, cards/lg/en/major-arcana/0-the-fool.jpg 600w" sizes="(max-width: 480px) 45vw, (max-width: 768px) 30vw, 320px" alt="The Fool" width="340" height="582">
+        <img class="card-img" data-ci="0" src="cards/sm/en/major-arcana/0-the-fool.jpg" alt="The Fool" width="340" height="582">
         <span class="card-num">0</span>
         <span class="card-name" data-i18n="c0Name">The Fool</span>
         <span class="card-meaning" data-i18n="c0Mean">New beginnings, innocence, a leap of faith</span>
       </div>
       <div class="arcana-card has-image">
-        <img class="card-img" data-ci="2" src="cards/sm/en/major-arcana/2-the-high-priestess.jpg" srcset="cards/sm/en/major-arcana/2-the-high-priestess.jpg 340w, cards/lg/en/major-arcana/2-the-high-priestess.jpg 600w" sizes="(max-width: 480px) 45vw, (max-width: 768px) 30vw, 320px" alt="The High Priestess" width="340" height="582">
+        <img class="card-img" data-ci="2" src="cards/sm/en/major-arcana/2-the-high-priestess.jpg" alt="The High Priestess" width="340" height="582">
         <span class="card-num">II</span>
         <span class="card-name" data-i18n="c2Name">The High Priestess</span>
         <span class="card-meaning" data-i18n="c2Mean">Intuition, mystery, the subconscious</span>
       </div>
       <div class="arcana-card has-image">
-        <img class="card-img" data-ci="6" src="cards/sm/en/major-arcana/6-the-lovers.jpg" srcset="cards/sm/en/major-arcana/6-the-lovers.jpg 340w, cards/lg/en/major-arcana/6-the-lovers.jpg 600w" sizes="(max-width: 480px) 45vw, (max-width: 768px) 30vw, 320px" alt="The Lovers" width="340" height="582">
+        <img class="card-img" data-ci="6" src="cards/sm/en/major-arcana/6-the-lovers.jpg" alt="The Lovers" width="340" height="582">
         <span class="card-num">VI</span>
         <span class="card-name" data-i18n="c6Name">The Lovers</span>
         <span class="card-meaning" data-i18n="c6Mean">Union, choices, alignment of values</span>
       </div>
       <div class="arcana-card has-image">
-        <img class="card-img" data-ci="17" src="cards/sm/en/major-arcana/17-the-star.jpg" srcset="cards/sm/en/major-arcana/17-the-star.jpg 340w, cards/lg/en/major-arcana/17-the-star.jpg 600w" sizes="(max-width: 480px) 45vw, (max-width: 768px) 30vw, 320px" alt="The Star" width="340" height="582">
+        <img class="card-img" data-ci="17" src="cards/sm/en/major-arcana/17-the-star.jpg" alt="The Star" width="340" height="582">
         <span class="card-num">XVII</span>
         <span class="card-name" data-i18n="c17Name">The Star</span>
         <span class="card-meaning" data-i18n="c17Mean">Hope, renewal, spiritual connection</span>
       </div>
       <div class="arcana-card has-image">
-        <img class="card-img" data-ci="18" src="cards/sm/en/major-arcana/18-the-moon.jpg" srcset="cards/sm/en/major-arcana/18-the-moon.jpg 340w, cards/lg/en/major-arcana/18-the-moon.jpg 600w" sizes="(max-width: 480px) 45vw, (max-width: 768px) 30vw, 320px" alt="The Moon" width="340" height="582">
+        <img class="card-img" data-ci="18" src="cards/sm/en/major-arcana/18-the-moon.jpg" alt="The Moon" width="340" height="582">
         <span class="card-num">XVIII</span>
         <span class="card-name" data-i18n="c18Name">The Moon</span>
         <span class="card-meaning" data-i18n="c18Mean">Illusion, intuition, the unconscious</span>
       </div>
       <div class="arcana-card has-image">
-        <img class="card-img" data-ci="21" src="cards/sm/en/major-arcana/21-the-world.jpg" srcset="cards/sm/en/major-arcana/21-the-world.jpg 340w, cards/lg/en/major-arcana/21-the-world.jpg 600w" sizes="(max-width: 480px) 45vw, (max-width: 768px) 30vw, 320px" alt="The World" width="340" height="582">
+        <img class="card-img" data-ci="21" src="cards/sm/en/major-arcana/21-the-world.jpg" alt="The World" width="340" height="582">
         <span class="card-num">XXI</span>
         <span class="card-name" data-i18n="c21Name">The World</span>
         <span class="card-meaning" data-i18n="c21Mean">Completion, fulfilment, wholeness</span>
@@ -893,7 +875,7 @@ footer a:hover { color: var(--gold-light); }
       <span class="bi-icon">🃏</span>
       <div>
         <h4 data-i18n="box1Title">78 Tarot Cards</h4>
-        <p data-i18n="box1Desc">Full deck: 22 Major Arcana plus 56 Minor Arcana across Cups, Swords, Wands, and Pentacles. Each card originally illustrated.</p>
+        <p data-i18n="box1Desc">Full deck — 22 Major Arcana plus 56 Minor Arcana across Cups, Swords, Wands, and Pentacles. Each card originally illustrated.</p>
       </div>
     </div>
     <div class="box-item">
@@ -907,7 +889,7 @@ footer a:hover { color: var(--gold-light); }
       <span class="bi-icon">🪙</span>
       <div>
         <h4 data-i18n="box3Title">Gilded Gold Edges</h4>
-        <p data-i18n="box3Desc">Every card features gilded gold edges that catch the light, a finishing touch worthy of the Realm.</p>
+        <p data-i18n="box3Desc">Every card features gilded gold edges that catch the light — a finishing touch worthy of the Realm.</p>
       </div>
     </div>
     <div class="box-item">
@@ -921,7 +903,7 @@ footer a:hover { color: var(--gold-light); }
       <span class="bi-icon">📖</span>
       <div>
         <h4 data-i18n="box5Title">Complete Guidebook</h4>
-        <p data-i18n="box5Desc">A full explanation of the deck and how to use it: every card's upright and reversed meanings, the symbolism behind the artwork, and step-by-step spreads so you can read from the day it arrives.</p>
+        <p data-i18n="box5Desc">A full explanation of the deck and how to use it — every card's upright and reversed meanings, the symbolism behind the artwork, and step-by-step spreads so you can read from the day it arrives.</p>
       </div>
     </div>
   </div>
@@ -952,7 +934,7 @@ footer a:hover { color: var(--gold-light); }
   <div class="inner">
     <div class="ornament">✦ ✦ ✦</div>
     <h2 class="section-title" data-i18n="priceTitle">Claim Your Deck</h2>
-    <p class="section-lead" data-i18n="priceLead">First edition, limited to 250 hand-numbered sets</p>
+    <p class="section-lead" data-i18n="priceLead">First edition — limited to 250 hand-numbered sets</p>
 
     <div class="price-card">
       <div class="edition-label" data-i18n="editionLabel">First Edition</div>
@@ -964,7 +946,7 @@ footer a:hover { color: var(--gold-light); }
         <li data-i18n="priceLi3">Gilded gold edges on every card</li>
         <li data-i18n="priceLi4">Custom rigid telescope box</li>
         <li data-i18n="priceLi5">Shrink-wrapped for protection</li>
-        <li data-i18n="priceLi6">Complete guidebook with every card explained</li>
+        <li data-i18n="priceLi6">Complete guidebook — every card explained</li>
         <li data-i18n="priceLi7">Choose English, Français or Nederlands</li>
         <li data-i18n="priceLi8">Priced in your local currency at checkout</li>
       </ul>
@@ -979,7 +961,7 @@ footer a:hover { color: var(--gold-light); }
       <a href="#order" id="preorderBtn" class="price-cta" data-i18n="priceCta">Pre-Order Now</a>
 
       <div class="capture" id="capture">
-        <p data-i18n="captureLead">Not open for orders quite yet. Leave your email and you'll get first claim on the 250.</p>
+        <p data-i18n="captureLead">Not open for orders quite yet — leave your email and you'll get first claim on the 250.</p>
         <form id="captureForm" novalidate>
           <div class="capture-row">
             <label class="hp" for="cf_hp">Leave blank</label>
@@ -1020,7 +1002,7 @@ const T = {
     aboutLead: "Where ancient wisdom meets original artistry",
     aboutP1: '<strong>Legends of the Realm</strong> is not just another tarot deck. Every card has been originally illustrated in a rich, fantasy style that draws you into a world of mythic archetypes, celestial wonder, and earthbound wisdom.',
     aboutP2: 'From <strong>The Fool’s</strong> first brave step into the unknown to <strong>The World’s</strong> radiant completion, each of the 78 cards tells a story through warm golden tones, deep shadows, and intricate detail that rewards every reading.',
-    aboutP3: 'Created by the team behind <strong>PsychicWorld.com</strong>, the world’s leading live psychic guidance platform, and this deck carries the energy of thousands of real readings, real seekers, and real transformations.',
+    aboutP3: 'Created by the team behind <strong>PsychicWorld.com</strong> — the world’s leading live psychic guidance platform — this deck carries the energy of thousands of real readings, real seekers, and real transformations.',
     arcanaTitle: "The Major Arcana",
     arcanaLead: "Six of the twenty-two cards charting the soul’s great journey",
     c0Name: "The Fool", c0Mean: "New beginnings, innocence, a leap of faith",
@@ -1053,25 +1035,25 @@ const T = {
     pentTitle: "Pentacles", pentDesc: "Material world, prosperity, health, and the grounded wisdom of earth. Pentacles anchor the spiritual into the tangible.",
     insideTitle: "What’s Inside",
     insideLead: "Every detail crafted for a premium reading experience",
-    box1Title: "78 Tarot Cards", box1Desc: "Full deck: 22 Major Arcana plus 56 Minor Arcana across Cups, Swords, Wands, and Pentacles. Each card originally illustrated.",
+    box1Title: "78 Tarot Cards", box1Desc: "Full deck — 22 Major Arcana plus 56 Minor Arcana across Cups, Swords, Wands, and Pentacles. Each card originally illustrated.",
     box2Title: "Premium Card Stock", box2Desc: "310gsm black-core cardstock with linen texture finish. Smooth to shuffle, resilient for years of daily readings.",
-    box3Title: "Gilded Gold Edges", box3Desc: "Every card features gilded gold edges that catch the light, a finishing touch worthy of the Realm.",
+    box3Title: "Gilded Gold Edges", box3Desc: "Every card features gilded gold edges that catch the light — a finishing touch worthy of the Realm.",
     box4Title: "Rigid Telescope Box", box4Desc: "Custom-designed two-piece rigid box with original artwork. A keepsake that protects and presents your deck beautifully.",
     langTitle: "Available in Three Languages",
     langLead: "The same exquisite art, localized card titles in your language",
     priceTitle: "Claim Your Deck",
-    priceLead: "First edition, limited to 250 hand-numbered sets",
+    priceLead: "First edition — limited to 250 hand-numbered sets",
     editionPick: "Choose your edition",
     edEn: "English",
     edNl: "Nederlands",
     edFr: "Français",
-    captureLead: "Not open for orders quite yet. Leave your email and you’ll get first claim on the 250.",
+    captureLead: "Not open for orders quite yet — leave your email and you’ll get first claim on the 250.",
     capturePlaceholder: "you@example.com",
     captureBtn: "Notify Me",
     captureFine: "One email when the first edition opens. No newsletter, no sharing.",
     captureOk: "You’re on the list. We’ll email you first.",
     captureBad: "That email doesn’t look right.",
-    captureErr: "Something went wrong. Please try again.",
+    captureErr: "Something went wrong — please try again.",
     captureDupe: "You’re already on the list.",
     captureSending: "Sending…",
     editionLabel: "First Edition",
@@ -1082,8 +1064,8 @@ const T = {
     priceLi4: "Custom rigid telescope box",
     priceLi5: "Shrink-wrapped for protection",
     box5Title: "Complete Guidebook",
-    box5Desc: "A full explanation of the deck and how to use it: every card’s upright and reversed meanings, the symbolism behind the artwork, and step-by-step spreads so you can read from the day it arrives.",
-    priceLi6: "Complete guidebook with every card explained",
+    box5Desc: "A full explanation of the deck and how to use it — every card’s upright and reversed meanings, the symbolism behind the artwork, and step-by-step spreads so you can read from the day it arrives.",
+    priceLi6: "Complete guidebook — every card explained",
     priceLi7: "Choose English, Français or Nederlands",
     priceLi8: "Priced in your local currency at checkout",
     priceCta: "Pre-Order Now",
@@ -1098,7 +1080,7 @@ const T = {
     aboutLead: "Là où la sagesse ancienne rencontre l’art original",
     aboutP1: '<strong>Legends of the Realm</strong> n’est pas un simple jeu de tarot. Chaque carte a été illustrée de manière originale dans un style fantastique riche qui vous plonge dans un monde d’archétypes mythiques, de merveilles célestes et de sagesse terrestre.',
     aboutP2: 'Du premier pas courageux du <strong>Mat</strong> vers l’inconnu à l’accomplissement radieux du <strong>Monde</strong>, chacune des 78 cartes raconte une histoire à travers des tons dorés chaleureux, des ombres profondes et des détails minutieux qui enrichissent chaque tirage.',
-    aboutP3: 'Créé par l’équipe derrière <strong>PsychicWorld.com</strong>, la première plateforme mondiale de guidance psychique en direct, et ce jeu porte l’énergie de milliers de tirages réels, de vrais chercheurs et de vraies transformations.',
+    aboutP3: 'Créé par l’équipe derrière <strong>PsychicWorld.com</strong> — la première plateforme mondiale de guidance psychique en direct — ce jeu porte l’énergie de milliers de tirages réels, de vrais chercheurs et de vraies transformations.',
     arcanaTitle: "Les Arcanes Majeurs",
     arcanaLead: "Six des vingt-deux cartes qui tracent le grand voyage de l’âme",
     c0Name: "Le Fou", c0Mean: "Nouveaux départs, innocence, un saut dans l’inconnu",
@@ -1131,25 +1113,25 @@ const T = {
     pentTitle: "Deniers", pentDesc: "Monde matériel, prospérité, santé et la sagesse ancrée de la terre. Les Deniers relient le spirituel au tangible.",
     insideTitle: "Contenu du Coffret",
     insideLead: "Chaque détail conçu pour une expérience de tirage premium",
-    box1Title: "78 Cartes de Tarot", box1Desc: "Jeu complet : 22 Arcanes Majeurs et 56 Arcanes Mineurs répartis en Coupes, Épées, Bâtons et Deniers. Chaque carte illustrée de manière originale.",
+    box1Title: "78 Cartes de Tarot", box1Desc: "Jeu complet — 22 Arcanes Majeurs et 56 Arcanes Mineurs répartis en Coupes, Épées, Bâtons et Deniers. Chaque carte illustrée de manière originale.",
     box2Title: "Papier Premium", box2Desc: "Carton 310g à cœur noir avec finition lin. Agréable à mélanger, résistant pour des années de tirages quotidiens.",
-    box3Title: "Tranches Dorées", box3Desc: "Chaque carte est dotée de tranches dorées qui captent la lumière, une finition digne du Royaume.",
+    box3Title: "Tranches Dorées", box3Desc: "Chaque carte est dotée de tranches dorées qui captent la lumière — une finition digne du Royaume.",
     box4Title: "Boîte Rigide Télescopique", box4Desc: "Boîte rigide en deux parties conçue sur mesure avec des illustrations originales. Un écrin qui protège et présente votre jeu magnifiquement.",
     langTitle: "Disponible en Trois Langues",
     langLead: "Le même art exquis, les titres des cartes localisés dans votre langue",
     priceTitle: "Réclamez Votre Jeu",
-    priceLead: "Première édition, limitée à 250 coffrets numérotés à la main",
+    priceLead: "Première édition — limitée à 250 coffrets numérotés à la main",
     editionPick: "Choisissez votre édition",
     edEn: "English",
     edNl: "Nederlands",
     edFr: "Français",
-    captureLead: "Les commandes ne sont pas encore ouvertes. Laissez votre e-mail pour être prioritaire sur les 250.",
+    captureLead: "Les commandes ne sont pas encore ouvertes — laissez votre e-mail pour être prioritaire sur les 250.",
     capturePlaceholder: "vous@exemple.com",
     captureBtn: "Prévenez-moi",
     captureFine: "Un seul e-mail à l’ouverture de la première édition. Pas de newsletter, aucun partage.",
     captureOk: "Vous êtes inscrit. Vous serez prévenu en premier.",
     captureBad: "Cette adresse e-mail semble incorrecte.",
-    captureErr: "Une erreur est survenue. Veuillez réessayer.",
+    captureErr: "Une erreur est survenue — veuillez réessayer.",
     captureDupe: "Vous êtes déjà inscrit.",
     captureSending: "Envoi…",
     editionLabel: "Première Édition",
@@ -1160,8 +1142,8 @@ const T = {
     priceLi4: "Boîte rigide télescopique sur mesure",
     priceLi5: "Emballage sous film protecteur",
     box5Title: "Livret Complet",
-    box5Desc: "Une explication complète du jeu et de son utilisation : les significations à l’endroit et à l’envers de chaque carte, le symbolisme des illustrations, et des tirages pas à pas pour lire dès le jour de la réception.",
-    priceLi6: "Livret complet, chaque carte expliquée",
+    box5Desc: "Une explication complète du jeu et de son utilisation — les significations à l’endroit et à l’envers de chaque carte, le symbolisme des illustrations, et des tirages pas à pas pour lire dès le jour de la réception.",
+    priceLi6: "Livret complet — chaque carte expliquée",
     priceLi7: "Au choix : English, Français ou Nederlands",
     priceLi8: "Prix affiché dans votre devise locale",
     priceCta: "Pré-Commander Maintenant",
@@ -1175,8 +1157,8 @@ const T = {
     aboutTitle: "Geboren uit het Rijk",
     aboutLead: "Waar eeuwenoude wijsheid originele kunst ontmoet",
     aboutP1: '<strong>Legends of the Realm</strong> is niet zomaar een tarotdeck. Elke kaart is origineel geïllustreerd in een rijke fantasystijl die u meeneemt naar een wereld van mythische archetypen, hemelse wonderen en aardse wijsheid.',
-    aboutP2: 'Van de eerste moedige stap van <strong>De Dwaas</strong> naar het onbekende tot de stralende voltooiing van <strong>De Wereld</strong>, elk van de 78 kaarten vertelt een verhaal door warme gouden tinten, diepe schaduwen en ingewikkelde details die elke lezing verrijken.',
-    aboutP3: 'Gecreëerd door het team achter <strong>PsychicWorld.com</strong>, het toonaangevende platform voor live paragnostische begeleiding, draagt dit deck de energie van duizenden echte lezingen, echte zoekers en echte transformaties.',
+    aboutP2: 'Van de eerste moedige stap van <strong>De Dwaas</strong> naar het onbekende tot de stralende voltooiing van <strong>De Wereld</strong> — elk van de 78 kaarten vertelt een verhaal door warme gouden tinten, diepe schaduwen en ingewikkelde details die elke lezing verrijken.',
+    aboutP3: 'Gecreëerd door het team achter <strong>PsychicWorld.com</strong> — het toonaangevende platform voor live paragnostische begeleiding — draagt dit deck de energie van duizenden echte lezingen, echte zoekers en echte transformaties.',
     arcanaTitle: "De Grote Arcana",
     arcanaLead: "Zes van de tweeëntwintig kaarten die de grote reis van de ziel uitstippelen",
     c0Name: "De Dwaas", c0Mean: "Nieuw begin, onschuld, een sprong in het diepe",
@@ -1209,25 +1191,25 @@ const T = {
     pentTitle: "Pentakels", pentDesc: "Materiële wereld, welvaart, gezondheid en de geaarde wijsheid van de aarde. Pentakels verankeren het spirituele in het tastbare.",
     insideTitle: "Wat Zit Erin",
     insideLead: "Elk detail ontworpen voor een premium leeservaring",
-    box1Title: "78 Tarotkaarten", box1Desc: "Compleet deck: 22 Grote Arcana plus 56 Kleine Arcana verdeeld over Bekers, Zwaarden, Staven en Pentakels. Elke kaart origineel geïllustreerd.",
+    box1Title: "78 Tarotkaarten", box1Desc: "Compleet deck — 22 Grote Arcana plus 56 Kleine Arcana verdeeld over Bekers, Zwaarden, Staven en Pentakels. Elke kaart origineel geïllustreerd.",
     box2Title: "Premium Karton", box2Desc: "310g karton met zwarte kern en linnen textuur. Soepel te schudden, jarenlang bestand tegen dagelijks gebruik.",
-    box3Title: "Vergulde Gouden Randen", box3Desc: "Elke kaart heeft vergulde gouden randen die het licht vangen, een afwerking het Rijk waardig.",
+    box3Title: "Vergulde Gouden Randen", box3Desc: "Elke kaart heeft vergulde gouden randen die het licht vangen — een afwerking het Rijk waardig.",
     box4Title: "Rigide Telescoopdoos", box4Desc: "Op maat ontworpen tweedelige rigide doos met origineel artwork. Een bewaarstuk dat uw deck prachtig beschermt en presenteert.",
     langTitle: "Beschikbaar in Drie Talen",
     langLead: "Dezelfde prachtige kunst, kaarttitels gelokaliseerd in uw taal",
     priceTitle: "Claim Uw Deck",
-    priceLead: "Eerste editie, gelimiteerd tot 250 handgenummerde sets",
+    priceLead: "Eerste editie — gelimiteerd tot 250 handgenummerde sets",
     editionPick: "Kies uw editie",
     edEn: "English",
     edNl: "Nederlands",
     edFr: "Français",
-    captureLead: "Bestellen kan nog niet. Laat uw e-mail achter en u krijgt als eerste recht op de 250.",
+    captureLead: "Bestellen kan nog niet — laat uw e-mail achter en u krijgt als eerste recht op de 250.",
     capturePlaceholder: "u@voorbeeld.nl",
     captureBtn: "Houd mij op de hoogte",
     captureFine: "Één e-mail zodra de eerste editie opengaat. Geen nieuwsbrief, niets gedeeld.",
     captureOk: "U staat op de lijst. U hoort het als eerste.",
     captureBad: "Dit e-mailadres lijkt onjuist.",
-    captureErr: "Er ging iets mis. Probeer het opnieuw.",
+    captureErr: "Er ging iets mis — probeer het opnieuw.",
     captureDupe: "U staat al op de lijst.",
     captureSending: "Versturen…",
     editionLabel: "Eerste Editie",
@@ -1238,8 +1220,8 @@ const T = {
     priceLi4: "Op maat gemaakte rigide telescoopdoos",
     priceLi5: "Krimpfolie verpakt ter bescherming",
     box5Title: "Volledig Handboek",
-    box5Desc: "Een volledige uitleg van het deck en hoe u het gebruikt: de betekenis van elke kaart rechtop en omgekeerd, de symboliek achter de illustraties, en stap-voor-stap legpatronen zodat u vanaf dag één kunt lezen.",
-    priceLi6: "Volledig handboek, elke kaart uitgelegd",
+    box5Desc: "Een volledige uitleg van het deck en hoe u het gebruikt — de betekenis van elke kaart rechtop en omgekeerd, de symboliek achter de illustraties, en stap-voor-stap legpatronen zodat u vanaf dag één kunt lezen.",
+    priceLi6: "Volledig handboek — elke kaart uitgelegd",
     priceLi7: "Kies English, Français of Nederlands",
     priceLi8: "Prijs in uw eigen valuta bij het afrekenen",
     priceCta: "Nu Pre-Orderen",
@@ -1249,17 +1231,17 @@ const T = {
 
 
 /* ══════════════════════════════════════════════════════════════════
-   COMMERCE CONFIG: the only block you need to edit to go live.
+   COMMERCE CONFIG — the only block you need to edit to go live.
 
    1) STRIPE PAYMENT LINKS (one per language edition = 3 SKUs).
       Create in Stripe → Payment links → New. For each link:
-        • Product "Legends of the Realm, First Edition (EN/NL/FR)", €39.95
+        • Product "Legends of the Realm — First Edition (EN/NL/FR)", €39.95
         • Collect shipping address, restrict to Europe
         • Enable iDEAL + Bancontact + cards (NL/BE are the home markets)
         • Limit quantity sold to 250 so it closes itself when sold out
       Paste the https://buy.stripe.com/... URLs below.
       While these stay empty the button shows the email-capture form
-      instead, so it never becomes a dead link again.
+      instead — it never becomes a dead link again.
 
    2) MAILCHIMP: from your embedded-form code, copy the u= and id=
       values and your datacentre (the usX in the action URL).
@@ -1309,7 +1291,7 @@ function refreshCommerce() {
   }
 }
 
-/* Mailchimp accepts a JSONP GET at /subscribe/post-json, which lets a
+/* Mailchimp accepts a JSONP GET at /subscribe/post-json — this lets a
    fully static page subscribe someone and show inline success, with no
    backend and no redirect away from the page. */
 function mcSubscribe(email, cb) {
@@ -1399,12 +1381,8 @@ function setLang(lang) {
   refreshCommerce();
   document.querySelectorAll('img[data-ci]').forEach(img => {
     const i = +img.dataset.ci, s = (CARD_SLUGS[lang] || CARD_SLUGS.en)[i];
-    if (!s) return;
-    const sm = 'cards/sm/' + lang + '/major-arcana/' + s + '.jpg';
-    const lg = 'cards/lg/' + lang + '/major-arcana/' + s + '.jpg';
-    img.srcset = sm + ' 340w, ' + lg + ' 600w';
-    img.src = sm;
-    img.alt = (T[lang] && T[lang]['c' + i + 'Name']) || img.alt;
+    if (s) { img.src = 'cards/sm/' + lang + '/major-arcana/' + s + '.jpg';
+             img.alt = (T[lang] && T[lang]['c'+i+'Name']) || img.alt; }
   });
 }
 
