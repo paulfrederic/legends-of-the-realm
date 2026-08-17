@@ -668,6 +668,37 @@ footer a:hover { color: var(--gold-light); }
 .hero h1 { animation-delay: 0.3s; }
 .hero-subtitle { animation-delay: 0.6s; }
 .hero-cta { animation-delay: 0.9s; }
+
+/* ── order form / email capture ───────────────────────────── */
+.edition-pick { margin: 0 0 1.6rem; text-align: left; }
+.edition-pick > span { display:block; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin-bottom:.6rem; text-align:center; }
+.edition-opts { display:flex; gap:.5rem; justify-content:center; }
+.edition-opts label { flex:1; }
+.edition-opts input { position:absolute; opacity:0; width:0; height:0; }
+.edition-opts span { display:block; text-align:center; padding:.6rem .3rem; border:1px solid var(--border);
+  border-radius:5px; cursor:pointer; font-size:.85rem; color:var(--text-dim); transition:all .2s ease; }
+.edition-opts input:checked + span { border-color:var(--gold); color:var(--gold-pale); background:var(--gold-glow); }
+.edition-opts input:focus-visible + span { outline:2px solid var(--gold); outline-offset:2px; }
+.edition-opts span:hover { color:var(--text-bright); border-color:var(--gold); }
+
+.capture { margin-top:1.4rem; text-align:left; }
+.capture.is-hidden { display:none; }
+.capture > p { font-size:.9rem; color:var(--text-dim); margin:0 0 .8rem; text-align:center; }
+.capture-row { display:flex; gap:.5rem; }
+.capture input[type=email] { flex:1; min-width:0; padding:.85rem 1rem; border-radius:5px;
+  border:1px solid var(--border); background:rgba(0,0,0,.35); color:var(--text-bright); font-size:.95rem; font-family:inherit; }
+.capture input[type=email]:focus { outline:none; border-color:var(--gold); box-shadow:0 0 0 3px var(--gold-glow); }
+.capture button { padding:.85rem 1.4rem; border:none; border-radius:5px; cursor:pointer;
+  background:var(--gold); color:#1a1814; font-weight:700; font-size:.8rem; letter-spacing:.12em;
+  text-transform:uppercase; font-family:'Cinzel',serif; transition:background .2s ease; }
+.capture button:hover { background:var(--gold-light); }
+.capture button[disabled] { opacity:.55; cursor:default; }
+.capture .hp { position:absolute; left:-9999px; }
+.capture-msg { margin:.8rem 0 0; font-size:.88rem; text-align:center; min-height:1.2em; }
+.capture-msg.ok { color:var(--gold-pale); }
+.capture-msg.err { color:#d98b7a; }
+.capture .fineprint { font-size:.72rem; color:var(--text-dim); text-align:center; margin:.7rem 0 0; }
+@media (max-width:520px){ .capture-row{flex-direction:column} .edition-opts{flex-direction:column} }
 </style>
 </head>
 <body>
@@ -737,53 +768,138 @@ footer a:hover { color: var(--gold-light); }
 
     <div class="arcana-grid">
       <div class="arcana-card has-image">
-        <img class="card-img" src="cards/the-fool.jpg" alt="The Fool">
+        <img class="card-img" data-ci="0" src="cards/sm/en/major-arcana/0-the-fool.jpg" alt="The Fool" width="340" height="582">
         <span class="card-num">0</span>
-        <span class="card-name" data-i18n="foolName">The Fool</span>
-        <span class="card-meaning" data-i18n="foolMean">New beginnings, innocence, a leap of faith</span>
+        <span class="card-name" data-i18n="c0Name">The Fool</span>
+        <span class="card-meaning" data-i18n="c0Mean">New beginnings, innocence, a leap of faith</span>
       </div>
       <div class="arcana-card has-image">
-        <img class="card-img" src="cards/the-magician.jpg" alt="The Magician">
+        <img class="card-img" data-ci="1" src="cards/sm/en/major-arcana/1-the-magician.jpg" alt="The Magician" width="340" height="582">
         <span class="card-num">I</span>
-        <span class="card-name" data-i18n="magicianName">The Magician</span>
-        <span class="card-meaning" data-i18n="magicianMean">Manifestation, willpower, resourcefulness</span>
+        <span class="card-name" data-i18n="c1Name">The Magician</span>
+        <span class="card-meaning" data-i18n="c1Mean">Manifestation, willpower, resourcefulness</span>
       </div>
       <div class="arcana-card has-image">
-        <img class="card-img" src="cards/the-high-priestess.jpg" alt="The High Priestess">
+        <img class="card-img" data-ci="2" src="cards/sm/en/major-arcana/2-the-high-priestess.jpg" alt="The High Priestess" width="340" height="582">
         <span class="card-num">II</span>
-        <span class="card-name" data-i18n="priestessName">The High Priestess</span>
-        <span class="card-meaning" data-i18n="priestessMean">Intuition, mystery, the subconscious</span>
+        <span class="card-name" data-i18n="c2Name">The High Priestess</span>
+        <span class="card-meaning" data-i18n="c2Mean">Intuition, mystery, the subconscious</span>
       </div>
       <div class="arcana-card has-image">
-        <img class="card-img" src="cards/the-empress.jpg" alt="The Empress">
+        <img class="card-img" data-ci="3" src="cards/sm/en/major-arcana/3-the-empress.jpg" alt="The Empress" width="340" height="582">
         <span class="card-num">III</span>
-        <span class="card-name" data-i18n="empressName">The Empress</span>
-        <span class="card-meaning" data-i18n="empressMean">Abundance, nurturing, sensual beauty</span>
+        <span class="card-name" data-i18n="c3Name">The Empress</span>
+        <span class="card-meaning" data-i18n="c3Mean">Abundance, nurturing, sensual beauty</span>
       </div>
       <div class="arcana-card has-image">
-        <img class="card-img" src="cards/the-lovers.jpg" alt="The Lovers">
+        <img class="card-img" data-ci="4" src="cards/sm/en/major-arcana/4-the-emperor.jpg" alt="The Emperor" width="340" height="582" loading="lazy">
+        <span class="card-num">IV</span>
+        <span class="card-name" data-i18n="c4Name">The Emperor</span>
+        <span class="card-meaning" data-i18n="c4Mean">Authority, structure, steady command</span>
+      </div>
+      <div class="arcana-card has-image">
+        <img class="card-img" data-ci="5" src="cards/sm/en/major-arcana/5-the-hierophant.jpg" alt="The Hierophant" width="340" height="582" loading="lazy">
+        <span class="card-num">V</span>
+        <span class="card-name" data-i18n="c5Name">The Hierophant</span>
+        <span class="card-meaning" data-i18n="c5Mean">Tradition, teaching, spiritual guidance</span>
+      </div>
+      <div class="arcana-card has-image">
+        <img class="card-img" data-ci="6" src="cards/sm/en/major-arcana/6-the-lovers.jpg" alt="The Lovers" width="340" height="582" loading="lazy">
         <span class="card-num">VI</span>
-        <span class="card-name" data-i18n="loversName">The Lovers</span>
-        <span class="card-meaning" data-i18n="loversMean">Union, choices, alignment of values</span>
+        <span class="card-name" data-i18n="c6Name">The Lovers</span>
+        <span class="card-meaning" data-i18n="c6Mean">Union, choices, alignment of values</span>
       </div>
       <div class="arcana-card has-image">
-        <img class="card-img" src="cards/the-star.jpg" alt="The Star">
+        <img class="card-img" data-ci="7" src="cards/sm/en/major-arcana/7-the-chariot.jpg" alt="The Chariot" width="340" height="582" loading="lazy">
+        <span class="card-num">VII</span>
+        <span class="card-name" data-i18n="c7Name">The Chariot</span>
+        <span class="card-meaning" data-i18n="c7Mean">Drive, focus, forward momentum</span>
+      </div>
+      <div class="arcana-card has-image">
+        <img class="card-img" data-ci="8" src="cards/sm/en/major-arcana/8-strength.jpg" alt="Strength" width="340" height="582" loading="lazy">
+        <span class="card-num">VIII</span>
+        <span class="card-name" data-i18n="c8Name">Strength</span>
+        <span class="card-meaning" data-i18n="c8Mean">Courage, patience, gentle power</span>
+      </div>
+      <div class="arcana-card has-image">
+        <img class="card-img" data-ci="9" src="cards/sm/en/major-arcana/9-the-hermit.jpg" alt="The Hermit" width="340" height="582" loading="lazy">
+        <span class="card-num">IX</span>
+        <span class="card-name" data-i18n="c9Name">The Hermit</span>
+        <span class="card-meaning" data-i18n="c9Mean">Solitude, reflection, inner searching</span>
+      </div>
+      <div class="arcana-card has-image">
+        <img class="card-img" data-ci="10" src="cards/sm/en/major-arcana/10-wheel-of-fortune.jpg" alt="Wheel of Fortune" width="340" height="582" loading="lazy">
+        <span class="card-num">X</span>
+        <span class="card-name" data-i18n="c10Name">Wheel of Fortune</span>
+        <span class="card-meaning" data-i18n="c10Mean">Cycles, turning points, destiny</span>
+      </div>
+      <div class="arcana-card has-image">
+        <img class="card-img" data-ci="11" src="cards/sm/en/major-arcana/11-justice.jpg" alt="Justice" width="340" height="582" loading="lazy">
+        <span class="card-num">XI</span>
+        <span class="card-name" data-i18n="c11Name">Justice</span>
+        <span class="card-meaning" data-i18n="c11Mean">Truth, balance, consequence</span>
+      </div>
+      <div class="arcana-card has-image">
+        <img class="card-img" data-ci="12" src="cards/sm/en/major-arcana/12-the-hanged-man.jpg" alt="The Hanged Man" width="340" height="582" loading="lazy">
+        <span class="card-num">XII</span>
+        <span class="card-name" data-i18n="c12Name">The Hanged Man</span>
+        <span class="card-meaning" data-i18n="c12Mean">Suspension, surrender, new perspective</span>
+      </div>
+      <div class="arcana-card has-image">
+        <img class="card-img" data-ci="13" src="cards/sm/en/major-arcana/13-death.jpg" alt="Death" width="340" height="582" loading="lazy">
+        <span class="card-num">XIII</span>
+        <span class="card-name" data-i18n="c13Name">Death</span>
+        <span class="card-meaning" data-i18n="c13Mean">Endings, transformation, release</span>
+      </div>
+      <div class="arcana-card has-image">
+        <img class="card-img" data-ci="14" src="cards/sm/en/major-arcana/14-temperance.jpg" alt="Temperance" width="340" height="582" loading="lazy">
+        <span class="card-num">XIV</span>
+        <span class="card-name" data-i18n="c14Name">Temperance</span>
+        <span class="card-meaning" data-i18n="c14Mean">Balance, moderation, patient blending</span>
+      </div>
+      <div class="arcana-card has-image">
+        <img class="card-img" data-ci="15" src="cards/sm/en/major-arcana/15-the-devil.jpg" alt="The Devil" width="340" height="582" loading="lazy">
+        <span class="card-num">XV</span>
+        <span class="card-name" data-i18n="c15Name">The Devil</span>
+        <span class="card-meaning" data-i18n="c15Mean">Attachment, temptation, self-imposed chains</span>
+      </div>
+      <div class="arcana-card has-image">
+        <img class="card-img" data-ci="16" src="cards/sm/en/major-arcana/16-the-tower.jpg" alt="The Tower" width="340" height="582" loading="lazy">
+        <span class="card-num">XVI</span>
+        <span class="card-name" data-i18n="c16Name">The Tower</span>
+        <span class="card-meaning" data-i18n="c16Mean">Upheaval, sudden truth, collapse</span>
+      </div>
+      <div class="arcana-card has-image">
+        <img class="card-img" data-ci="17" src="cards/sm/en/major-arcana/17-the-star.jpg" alt="The Star" width="340" height="582" loading="lazy">
         <span class="card-num">XVII</span>
-        <span class="card-name" data-i18n="starName">The Star</span>
-        <span class="card-meaning" data-i18n="starMean">Hope, renewal, spiritual connection</span>
+        <span class="card-name" data-i18n="c17Name">The Star</span>
+        <span class="card-meaning" data-i18n="c17Mean">Hope, renewal, spiritual connection</span>
       </div>
       <div class="arcana-card has-image">
-        <img class="card-img" src="cards/the-moon.jpg" alt="The Moon">
+        <img class="card-img" data-ci="18" src="cards/sm/en/major-arcana/18-the-moon.jpg" alt="The Moon" width="340" height="582" loading="lazy">
         <span class="card-num">XVIII</span>
-        <span class="card-name" data-i18n="moonName">The Moon</span>
-        <span class="card-meaning" data-i18n="moonMean">Illusion, intuition, the unconscious</span>
+        <span class="card-name" data-i18n="c18Name">The Moon</span>
+        <span class="card-meaning" data-i18n="c18Mean">Illusion, intuition, the unconscious</span>
       </div>
       <div class="arcana-card has-image">
-        <img class="card-img" src="cards/the-world.jpg" alt="The World">
-        <span class="card-num">XXI</span>
-        <span class="card-name" data-i18n="worldName">The World</span>
-        <span class="card-meaning" data-i18n="worldMean">Completion, fulfilment, wholeness</span>
+        <img class="card-img" data-ci="19" src="cards/sm/en/major-arcana/19-the-sun.jpg" alt="The Sun" width="340" height="582" loading="lazy">
+        <span class="card-num">XIX</span>
+        <span class="card-name" data-i18n="c19Name">The Sun</span>
+        <span class="card-meaning" data-i18n="c19Mean">Joy, clarity, vitality</span>
       </div>
+      <div class="arcana-card has-image">
+        <img class="card-img" data-ci="20" src="cards/sm/en/major-arcana/20-judgment.jpg" alt="Judgment" width="340" height="582" loading="lazy">
+        <span class="card-num">XX</span>
+        <span class="card-name" data-i18n="c20Name">Judgment</span>
+        <span class="card-meaning" data-i18n="c20Mean">Awakening, reckoning, a call to rise</span>
+      </div>
+      <div class="arcana-card has-image">
+        <img class="card-img" data-ci="21" src="cards/sm/en/major-arcana/21-the-world.jpg" alt="The World" width="340" height="582" loading="lazy">
+        <span class="card-num">XXI</span>
+        <span class="card-name" data-i18n="c21Name">The World</span>
+        <span class="card-meaning" data-i18n="c21Mean">Completion, fulfilment, wholeness</span>
+      </div>
+    </div>
     </div>
   </div>
 </div>
@@ -826,7 +942,7 @@ footer a:hover { color: var(--gold-light); }
 
   <div class="box-contents">
     <div class="box-item">
-      <span class="bi-icon">��</span>
+      <span class="bi-icon">🃏</span>
       <div>
         <h4 data-i18n="box1Title">78 Tarot Cards</h4>
         <p data-i18n="box1Desc">Full deck — 22 Major Arcana plus 56 Minor Arcana across Cups, Swords, Wands, and Pentacles. Each card originally illustrated.</p>
@@ -895,7 +1011,30 @@ footer a:hover { color: var(--gold-light); }
         <li data-i18n="priceLi5">Shrink-wrapped for protection</li>
         <li data-i18n="priceLi6">Available in EN, FR, or NL</li>
       </ul>
-      <a href="https://psychicworld.com" class="price-cta" data-i18n="priceCta">Pre-Order Now</a>
+      <div class="edition-pick">
+        <span data-i18n="editionPick">Choose your edition</span>
+        <div class="edition-opts">
+          <label><input type="radio" name="edition" value="en" checked><span data-i18n="edEn">English</span></label>
+          <label><input type="radio" name="edition" value="nl"><span data-i18n="edNl">Nederlands</span></label>
+          <label><input type="radio" name="edition" value="fr"><span data-i18n="edFr">Français</span></label>
+        </div>
+      </div>
+      <a href="#order" id="preorderBtn" class="price-cta" data-i18n="priceCta">Pre-Order Now</a>
+
+      <div class="capture" id="capture">
+        <p data-i18n="captureLead">Not open for orders quite yet — leave your email and you'll get first claim on the 250.</p>
+        <form id="captureForm" novalidate>
+          <div class="capture-row">
+            <label class="hp" for="cf_hp">Leave blank</label>
+            <input class="hp" type="text" id="cf_hp" name="b_hp" tabindex="-1" autocomplete="off">
+            <input type="email" id="cf_email" name="EMAIL" required autocomplete="email"
+                   placeholder="you@example.com" data-i18n-ph="capturePlaceholder" aria-describedby="captureMsg">
+            <button type="submit" id="cf_btn" data-i18n="captureBtn">Notify Me</button>
+          </div>
+          <p class="capture-msg" id="captureMsg" role="status" aria-live="polite"></p>
+          <p class="fineprint" data-i18n="captureFine">One email when the first edition opens. No newsletter, no sharing.</p>
+        </form>
+      </div>
       <p class="limited-note" data-i18n="limitedNote">Only 250 sets in this first edition run. Once they're gone, they're gone.</p>
     </div>
   </div>
@@ -927,14 +1066,28 @@ const T = {
     aboutP3: 'Created by the team behind <strong>PsychicWorld.com</strong> — the world’s leading live psychic guidance platform — this deck carries the energy of thousands of real readings, real seekers, and real transformations.',
     arcanaTitle: "The Major Arcana",
     arcanaLead: "22 cards charting the soul’s great journey",
-    foolName: "The Fool", foolMean: "New beginnings, innocence, a leap of faith",
-    magicianName: "The Magician", magicianMean: "Manifestation, willpower, resourcefulness",
-    priestessName: "The High Priestess", priestessMean: "Intuition, mystery, the subconscious",
-    empressName: "The Empress", empressMean: "Abundance, nurturing, sensual beauty",
-    loversName: "The Lovers", loversMean: "Union, choices, alignment of values",
-    starName: "The Star", starMean: "Hope, renewal, spiritual connection",
-    moonName: "The Moon", moonMean: "Illusion, intuition, the unconscious",
-    worldName: "The World", worldMean: "Completion, fulfilment, wholeness",
+    c0Name: "The Fool", c0Mean: "New beginnings, innocence, a leap of faith",
+    c1Name: "The Magician", c1Mean: "Manifestation, willpower, resourcefulness",
+    c2Name: "The High Priestess", c2Mean: "Intuition, mystery, the subconscious",
+    c3Name: "The Empress", c3Mean: "Abundance, nurturing, sensual beauty",
+    c4Name: "The Emperor", c4Mean: "Authority, structure, steady command",
+    c5Name: "The Hierophant", c5Mean: "Tradition, teaching, spiritual guidance",
+    c6Name: "The Lovers", c6Mean: "Union, choices, alignment of values",
+    c7Name: "The Chariot", c7Mean: "Drive, focus, forward momentum",
+    c8Name: "Strength", c8Mean: "Courage, patience, gentle power",
+    c9Name: "The Hermit", c9Mean: "Solitude, reflection, inner searching",
+    c10Name: "Wheel of Fortune", c10Mean: "Cycles, turning points, destiny",
+    c11Name: "Justice", c11Mean: "Truth, balance, consequence",
+    c12Name: "The Hanged Man", c12Mean: "Suspension, surrender, new perspective",
+    c13Name: "Death", c13Mean: "Endings, transformation, release",
+    c14Name: "Temperance", c14Mean: "Balance, moderation, patient blending",
+    c15Name: "The Devil", c15Mean: "Attachment, temptation, self-imposed chains",
+    c16Name: "The Tower", c16Mean: "Upheaval, sudden truth, collapse",
+    c17Name: "The Star", c17Mean: "Hope, renewal, spiritual connection",
+    c18Name: "The Moon", c18Mean: "Illusion, intuition, the unconscious",
+    c19Name: "The Sun", c19Mean: "Joy, clarity, vitality",
+    c20Name: "Judgment", c20Mean: "Awakening, reckoning, a call to rise",
+    c21Name: "The World", c21Mean: "Completion, fulfilment, wholeness",
     suitsTitle: "The Four Suits",
     suitsLead: "56 Minor Arcana cards across four elemental realms",
     cupsTitle: "Cups", cupsDesc: "The realm of emotion, love, relationships, and the flowing waters of intuition. From Ace to King, each card illuminates the heart’s journey.",
@@ -951,6 +1104,19 @@ const T = {
     langLead: "The same exquisite art, localized card titles in your language",
     priceTitle: "Claim Your Deck",
     priceLead: "First edition — limited to 250 hand-numbered sets",
+    editionPick: "Choose your edition",
+    edEn: "English",
+    edNl: "Nederlands",
+    edFr: "Français",
+    captureLead: "Not open for orders quite yet — leave your email and you’ll get first claim on the 250.",
+    capturePlaceholder: "you@example.com",
+    captureBtn: "Notify Me",
+    captureFine: "One email when the first edition opens. No newsletter, no sharing.",
+    captureOk: "You’re on the list. We’ll email you first.",
+    captureBad: "That email doesn’t look right.",
+    captureErr: "Something went wrong — please try again.",
+    captureDupe: "You’re already on the list.",
+    captureSending: "Sending…",
     editionLabel: "First Edition",
     priceNote: "Free shipping within Europe",
     priceLi1: "78 originally illustrated tarot cards",
@@ -974,14 +1140,28 @@ const T = {
     aboutP3: 'Créé par l’équipe derrière <strong>PsychicWorld.com</strong> — la première plateforme mondiale de guidance psychique en direct — ce jeu porte l’énergie de milliers de tirages réels, de vrais chercheurs et de vraies transformations.',
     arcanaTitle: "Les Arcanes Majeurs",
     arcanaLead: "22 cartes traçant le grand voyage de l’âme",
-    foolName: "Le Mat", foolMean: "Nouveaux départs, innocence, un saut dans la foi",
-    magicianName: "Le Magicien", magicianMean: "Manifestation, volonté, ingéniosité",
-    priestessName: "La Papesse", priestessMean: "Intuition, mystère, le subconscient",
-    empressName: "L’Impératrice", empressMean: "Abondance, bienveillance, beauté sensuelle",
-    loversName: "Les Amoureux", loversMean: "Union, choix, alignement des valeurs",
-    starName: "L’Étoile", starMean: "Espoir, renouveau, connexion spirituelle",
-    moonName: "La Lune", moonMean: "Illusion, intuition, l’inconscient",
-    worldName: "Le Monde", worldMean: "Accomplissement, plénitude, totalité",
+    c0Name: "Le Fou", c0Mean: "Nouveaux départs, innocence, un saut dans l’inconnu",
+    c1Name: "Le Bateleur", c1Mean: "Manifestation, volonté, ingéniosité",
+    c2Name: "La Papesse", c2Mean: "Intuition, mystère, l’inconscient",
+    c3Name: "L'Impératrice", c3Mean: "Abondance, bienveillance, beauté sensuelle",
+    c4Name: "L'Empereur", c4Mean: "Autorité, structure, commandement assuré",
+    c5Name: "Le Pape", c5Mean: "Tradition, enseignement, guidance spirituelle",
+    c6Name: "L'Amoureux", c6Mean: "Union, choix, accord des valeurs",
+    c7Name: "Le Chariot", c7Mean: "Élan, concentration, marche en avant",
+    c8Name: "La Force", c8Mean: "Courage, patience, force tranquille",
+    c9Name: "L'Hermite", c9Mean: "Solitude, réflexion, quête intérieure",
+    c10Name: "La Roue de Fortune", c10Mean: "Cycles, tournants, destin",
+    c11Name: "La Justice", c11Mean: "Vérité, équilibre, conséquence",
+    c12Name: "Le Pendu", c12Mean: "Suspension, lâcher-prise, regard nouveau",
+    c13Name: "La Mort", c13Mean: "Fins, transformation, libération",
+    c14Name: "La Tempérance", c14Mean: "Équilibre, modération, juste mesure",
+    c15Name: "Le Diable", c15Mean: "Attachement, tentation, chaînes choisies",
+    c16Name: "La Maison Dieu", c16Mean: "Bouleversement, vérité soudaine, effondrement",
+    c17Name: "L'Étoile", c17Mean: "Espoir, renouveau, lien spirituel",
+    c18Name: "La Lune", c18Mean: "Illusion, intuition, l’inconscient",
+    c19Name: "Le Soleil", c19Mean: "Joie, clarté, vitalité",
+    c20Name: "Le Jugement", c20Mean: "Éveil, bilan, appel à se lever",
+    c21Name: "Le Monde", c21Mean: "Achèvement, accomplissement, plénitude",
     suitsTitle: "Les Quatre Couleurs",
     suitsLead: "56 cartes d’Arcanes Mineurs à travers quatre royaumes élémentaires",
     cupsTitle: "Coupes", cupsDesc: "Le royaume de l’émotion, de l’amour, des relations et des eaux fluides de l’intuition. De l’As au Roi, chaque carte illumine le voyage du cœur.",
@@ -998,6 +1178,19 @@ const T = {
     langLead: "Le même art exquis, les titres des cartes localisés dans votre langue",
     priceTitle: "Réclamez Votre Jeu",
     priceLead: "Première édition — limitée à 250 coffrets numérotés à la main",
+    editionPick: "Choisissez votre édition",
+    edEn: "English",
+    edNl: "Nederlands",
+    edFr: "Français",
+    captureLead: "Les commandes ne sont pas encore ouvertes — laissez votre e-mail pour être prioritaire sur les 250.",
+    capturePlaceholder: "vous@exemple.com",
+    captureBtn: "Prévenez-moi",
+    captureFine: "Un seul e-mail à l’ouverture de la première édition. Pas de newsletter, aucun partage.",
+    captureOk: "Vous êtes inscrit. Vous serez prévenu en premier.",
+    captureBad: "Cette adresse e-mail semble incorrecte.",
+    captureErr: "Une erreur est survenue — veuillez réessayer.",
+    captureDupe: "Vous êtes déjà inscrit.",
+    captureSending: "Envoi…",
     editionLabel: "Première Édition",
     priceNote: "Livraison gratuite en Europe",
     priceLi1: "78 cartes de tarot illustrées originalement",
@@ -1021,14 +1214,28 @@ const T = {
     aboutP3: 'Gecreëerd door het team achter <strong>PsychicWorld.com</strong> — het toonaangevende platform voor live paragnostische begeleiding — draagt dit deck de energie van duizenden echte lezingen, echte zoekers en echte transformaties.',
     arcanaTitle: "De Grote Arcana",
     arcanaLead: "22 kaarten die de grote reis van de ziel in kaart brengen",
-    foolName: "De Dwaas", foolMean: "Nieuw begin, onschuld, een sprong in het diepe",
-    magicianName: "De Magiër", magicianMean: "Manifestatie, wilskracht, vindingrijkheid",
-    priestessName: "De Hogepriesteres", priestessMean: "Intuïtie, mysterie, het onderbewuste",
-    empressName: "De Keizerin", empressMean: "Overvloed, zorgzaamheid, sensuele schoonheid",
-    loversName: "De Geliefden", loversMean: "Verbinding, keuzes, afstemming van waarden",
-    starName: "De Ster", starMean: "Hoop, vernieuwing, spirituele verbinding",
-    moonName: "De Maan", moonMean: "Illusie, intuïtie, het onbewuste",
-    worldName: "De Wereld", worldMean: "Voltooiing, vervulling, heelheid",
+    c0Name: "De Dwaas", c0Mean: "Nieuw begin, onschuld, een sprong in het diepe",
+    c1Name: "De Magiër", c1Mean: "Manifestatie, wilskracht, vindingrijkheid",
+    c2Name: "De Hogepriesteres", c2Mean: "Intuïtie, mysterie, het onderbewuste",
+    c3Name: "De Keizerin", c3Mean: "Overvloed, zorg, sensuele schoonheid",
+    c4Name: "De Keizer", c4Mean: "Autoriteit, structuur, vaste leiding",
+    c5Name: "De Hogepriester", c5Mean: "Traditie, onderricht, spirituele gids",
+    c6Name: "De Geliefden", c6Mean: "Verbintenis, keuzes, afstemming van waarden",
+    c7Name: "De Zegewagen", c7Mean: "Drive, focus, voorwaartse kracht",
+    c8Name: "De Kracht", c8Mean: "Moed, geduld, zachte kracht",
+    c9Name: "De Kluizenaar", c9Mean: "Eenzaamheid, bezinning, innerlijk zoeken",
+    c10Name: "Het Rad van Fortuin", c10Mean: "Cycli, keerpunten, lot",
+    c11Name: "De Gerechtigheid", c11Mean: "Waarheid, evenwicht, gevolg",
+    c12Name: "De Gehangene", c12Mean: "Stilstand, overgave, nieuw perspectief",
+    c13Name: "De Dood", c13Mean: "Einde, transformatie, loslaten",
+    c14Name: "De Gematigdheid", c14Mean: "Evenwicht, matiging, geduldig mengen",
+    c15Name: "De Duivel", c15Mean: "Gebondenheid, verleiding, eigen ketenen",
+    c16Name: "De Toren", c16Mean: "Omwenteling, plotse waarheid, instorting",
+    c17Name: "De Ster", c17Mean: "Hoop, vernieuwing, spirituele verbinding",
+    c18Name: "De Maan", c18Mean: "Illusie, intuïtie, het onbewuste",
+    c19Name: "De Zon", c19Mean: "Vreugde, helderheid, vitaliteit",
+    c20Name: "Het Oordeel", c20Mean: "Ontwaken, afrekening, een roep om op te staan",
+    c21Name: "De Wereld", c21Mean: "Voltooiing, vervulling, heelheid",
     suitsTitle: "De Vier Kleuren",
     suitsLead: "56 Kleine Arcana kaarten verdeeld over vier elementaire rijken",
     cupsTitle: "Bekers", cupsDesc: "Het rijk van emotie, liefde, relaties en de stromende wateren van intuïtie. Van Aas tot Koning verlicht elke kaart de reis van het hart.",
@@ -1045,6 +1252,19 @@ const T = {
     langLead: "Dezelfde prachtige kunst, kaarttitels gelokaliseerd in uw taal",
     priceTitle: "Claim Uw Deck",
     priceLead: "Eerste editie — gelimiteerd tot 250 handgenummerde sets",
+    editionPick: "Kies uw editie",
+    edEn: "English",
+    edNl: "Nederlands",
+    edFr: "Français",
+    captureLead: "Bestellen kan nog niet — laat uw e-mail achter en u krijgt als eerste recht op de 250.",
+    capturePlaceholder: "u@voorbeeld.nl",
+    captureBtn: "Houd mij op de hoogte",
+    captureFine: "Één e-mail zodra de eerste editie opengaat. Geen nieuwsbrief, niets gedeeld.",
+    captureOk: "U staat op de lijst. U hoort het als eerste.",
+    captureBad: "Dit e-mailadres lijkt onjuist.",
+    captureErr: "Er ging iets mis — probeer het opnieuw.",
+    captureDupe: "U staat al op de lijst.",
+    captureSending: "Versturen…",
     editionLabel: "Eerste Editie",
     priceNote: "Gratis verzending binnen Europa",
     priceLi1: "78 origineel geïllustreerde tarotkaarten",
@@ -1058,14 +1278,163 @@ const T = {
   }
 };
 
+
+/* ══════════════════════════════════════════════════════════════════
+   COMMERCE CONFIG — the only block you need to edit to go live.
+
+   1) STRIPE PAYMENT LINKS (one per language edition = 3 SKUs).
+      Create in Stripe → Payment links → New. For each link:
+        • Product "Legends of the Realm — First Edition (EN/NL/FR)", €39.95
+        • Collect shipping address, restrict to Europe
+        • Enable iDEAL + Bancontact + cards (NL/BE are the home markets)
+        • Limit quantity sold to 250 so it closes itself when sold out
+      Paste the https://buy.stripe.com/... URLs below.
+      While these stay empty the button shows the email-capture form
+      instead — it never becomes a dead link again.
+
+   2) MAILCHIMP: from your embedded-form code, copy the u= and id=
+      values and your datacentre (the usX in the action URL).
+      Audience → Signup forms → Embedded form.
+   ══════════════════════════════════════════════════════════════════ */
+const PAYMENT_LINKS = {
+  en: "",   // e.g. "https://buy.stripe.com/xxxxxxxxxxxx"
+  nl: "",
+  fr: ""
+};
+const MAILCHIMP = {
+  dc:  "",   // e.g. "us14"
+  u:   "",   // e.g. "a1b2c3d4e5f6g7h8i9j0k"
+  id:  "",   // e.g. "1a2b3c4d5e"
+  tag: "legends-preorder-waitlist"
+};
+/* ════════════════════════════════════════════════════════════════ */
+
+let CURRENT_LANG = 'en';
+
+function selectedEdition() {
+  const r = document.querySelector('input[name="edition"]:checked');
+  return r ? r.value : CURRENT_LANG;
+}
+
+function t(key, fallbackLang) {
+  const L = T[CURRENT_LANG] || T.en;
+  return L[key] || T.en[key] || '';
+}
+
+/* Show the Stripe button when the chosen edition has a link; otherwise
+   keep the capture form visible so the CTA always does something. */
+function refreshCommerce() {
+  const ed   = selectedEdition();
+  const link = (PAYMENT_LINKS[ed] || '').trim();
+  const btn  = document.getElementById('preorderBtn');
+  const cap  = document.getElementById('capture');
+  if (!btn || !cap) return;
+  if (link) {
+    btn.href = link;
+    btn.removeAttribute('data-noop');
+    cap.classList.add('is-hidden');
+  } else {
+    btn.href = '#order';
+    btn.setAttribute('data-noop', '1');
+    cap.classList.remove('is-hidden');
+  }
+}
+
+/* Mailchimp accepts a JSONP GET at /subscribe/post-json — this lets a
+   fully static page subscribe someone and show inline success, with no
+   backend and no redirect away from the page. */
+function mcSubscribe(email, cb) {
+  if (!MAILCHIMP.dc || !MAILCHIMP.u || !MAILCHIMP.id) { cb('unconfigured'); return; }
+  const cbName = 'mc_cb_' + Math.floor(Math.random() * 1e9);
+  const params = new URLSearchParams({
+    u: MAILCHIMP.u, id: MAILCHIMP.id, EMAIL: email,
+    EDITION: selectedEdition().toUpperCase(), MMERGE_LANG: CURRENT_LANG.toUpperCase(),
+    'tags': MAILCHIMP.tag, c: cbName
+  });
+  const s = document.createElement('script');
+  const timer = setTimeout(() => { cleanup(); cb('error'); }, 10000);
+  function cleanup() { clearTimeout(timer); delete window[cbName]; s.remove(); }
+  window[cbName] = (res) => {
+    cleanup();
+    if (res && res.result === 'success') return cb('ok');
+    const msg = (res && res.msg) || '';
+    cb(/already subscribed|is already/i.test(msg) ? 'dupe' : 'error');
+  };
+  s.onerror = () => { cleanup(); cb('error'); };
+  s.src = 'https://' + MAILCHIMP.dc + '.list-manage.com/subscribe/post-json?' + params.toString();
+  document.body.appendChild(s);
+}
+
+function initCommerce() {
+  document.querySelectorAll('input[name="edition"]').forEach(r =>
+    r.addEventListener('change', () => { r.dataset.userSet = '1'; refreshCommerce(); }));
+
+  const btn = document.getElementById('preorderBtn');
+  btn && btn.addEventListener('click', e => {
+    if (btn.getAttribute('data-noop')) {          // no link yet → focus capture
+      e.preventDefault();
+      document.getElementById('capture').classList.remove('is-hidden');
+      document.getElementById('cf_email').focus();
+    }
+  });
+
+  const form = document.getElementById('captureForm');
+  form && form.addEventListener('submit', e => {
+    e.preventDefault();
+    const emailEl = document.getElementById('cf_email');
+    const msgEl   = document.getElementById('captureMsg');
+    const btnEl   = document.getElementById('cf_btn');
+    const hp      = document.getElementById('cf_hp');
+    if (hp && hp.value) return;                    // bot
+    const email = (emailEl.value || '').trim();
+    const setMsg = (cls, key) => { msgEl.className = 'capture-msg ' + cls; msgEl.textContent = t(key); };
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { setMsg('err', 'captureBad'); emailEl.focus(); return; }
+    btnEl.disabled = true;
+    setMsg('', 'captureSending');
+    mcSubscribe(email, res => {
+      btnEl.disabled = false;
+      if (res === 'ok')        { setMsg('ok',  'captureOk');   form.reset(); }
+      else if (res === 'dupe') { setMsg('ok',  'captureDupe'); form.reset(); }
+      else                     { setMsg('err', 'captureErr');
+                                 console.warn('[legends] capture failed:', res,
+                                   res === 'unconfigured' ? 'set MAILCHIMP in the config block' : ''); }
+    });
+  });
+
+  refreshCommerce();
+}
+
+const CARD_SLUGS = {
+  en: ["0-the-fool","1-the-magician","2-the-high-priestess","3-the-empress","4-the-emperor","5-the-hierophant","6-the-lovers","7-the-chariot","8-strength","9-the-hermit","10-wheel-of-fortune","11-justice","12-the-hanged-man","13-death","14-temperance","15-the-devil","16-the-tower","17-the-star","18-the-moon","19-the-sun","20-judgment","21-the-world"],
+  fr: ["0-le-fou","1-le-bateleur","2-la-papesse","3-l-imperatrice","4-l-empereur","5-le-pape","6-l-amoureux","7-le-chariot","8-la-force","9-l-hermite","10-la-roue-de-fortune","11-la-justice","12-le-pendu","13-la-mort","14-la-temperance","15-le-diable","16-la-maison-dieu","17-l-etoile","18-la-lune","19-le-soleil","20-le-jugement","21-le-monde"],
+  nl: ["0-de-dwaas","1-de-magier","2-de-hogepriesteres","3-de-keizerin","4-de-keizer","5-de-hogepriester","6-de-geliefden","7-de-zegewagen","8-de-kracht","9-de-kluizenaar","10-het-rad-van-fortuin","11-de-gerechtigheid","12-de-gehangene","13-de-dood","14-de-gematigdheid","15-de-duivel","16-de-toren","17-de-ster","18-de-maan","19-de-zon","20-het-oordeel","21-de-wereld"]
+};
 function setLang(lang) {
+  CURRENT_LANG = lang;
   document.documentElement.lang = lang;
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent.trim().toLowerCase() === lang));
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.dataset.i18n;
     if (T[lang] && T[lang][key]) el.innerHTML = T[lang][key];
   });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const k = el.dataset.i18nPh;
+    if (T[lang] && T[lang][k]) el.placeholder = T[lang][k];
+  });
+  const _picked = document.querySelector('input[name="edition"]:checked');
+  if (_picked && !_picked.dataset.userSet) {
+    const r = document.querySelector('input[name="edition"][value="' + lang + '"]');
+    if (r) r.checked = true;
+  }
+  refreshCommerce();
+  document.querySelectorAll('img[data-ci]').forEach(img => {
+    const i = +img.dataset.ci, s = (CARD_SLUGS[lang] || CARD_SLUGS.en)[i];
+    if (s) { img.src = 'cards/sm/' + lang + '/major-arcana/' + s + '.jpg';
+             img.alt = (T[lang] && T[lang]['c'+i+'Name']) || img.alt; }
+  });
 }
+
+document.addEventListener('DOMContentLoaded', initCommerce);
 </script>
 
 </body>
