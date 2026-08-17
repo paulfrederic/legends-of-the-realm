@@ -12,6 +12,22 @@
 <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#0e0c09">
+
+<!-- Consent Mode v2. Defaults are denied, so no Google request is made and no
+     cookie is written until the visitor accepts in the banner below. -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  functionality_storage: 'granted',
+  security_storage: 'granted',
+  wait_for_update: 500
+});
+</script>
 <link rel="canonical" href="https://www.thelegendsoftherealm.com/">
 <!-- Open Graph -->
 <meta property="og:type" content="product">
@@ -967,6 +983,60 @@ footer a:hover { color: var(--gold-light); }
   .faq-item summary { font-size: 0.92rem; padding: 1rem 2.6rem 1rem 1.1rem; }
   .faq-answer { padding: 0 1.1rem 1.1rem; font-size: 0.92rem; }
 }
+/* CONSENT BANNER */
+.cookie-bar {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 9999;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem 1.5rem;
+  padding: 1.15rem 1.5rem;
+  background: rgba(14, 12, 9, 0.97);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.55);
+  font-size: 0.9rem;
+}
+.cookie-bar[hidden] { display: none; }
+body { transition: padding-bottom 0.2s; }
+.cookie-bar-text {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--text);
+  line-height: 1.5;
+}
+.cookie-bar-text a { color: var(--gold-light); }
+.cookie-bar-actions { display: flex; gap: 0.6rem; flex-shrink: 0; }
+.cookie-btn {
+  font: inherit;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.6rem 1.4rem;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.cookie-btn-gold {
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  color: #14110c;
+}
+.cookie-btn-gold:hover { background: var(--gold-light); border-color: var(--gold-light); }
+.cookie-btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.cookie-btn-ghost:hover { border-color: var(--gold); color: var(--gold-pale); }
+.cookie-btn:focus-visible { outline: 2px solid var(--gold-pale); outline-offset: 2px; }
+@media (max-width: 600px) {
+  .cookie-bar { padding: 1rem 1.1rem; font-size: 0.85rem; }
+  .cookie-bar-actions { width: 100%; }
+  .cookie-btn { flex: 1; padding: 0.7rem 0.5rem; }
+}
 </style>
 </head>
 <body>
@@ -1256,6 +1326,15 @@ footer a:hover { color: var(--gold-light); }
   </div>
 </div>
 
+<!-- CONSENT BANNER -->
+<div class="cookie-bar" id="cookieBar" role="region" aria-label="Cookie choice" hidden>
+  <p class="cookie-bar-text" data-i18n="cookieText">We would like to use analytics cookies to see how this page performs. Nothing is measured until you agree.</p>
+  <div class="cookie-bar-actions">
+    <button type="button" class="cookie-btn cookie-btn-ghost" id="cookieDecline" data-i18n="cookieDecline">Decline</button>
+    <button type="button" class="cookie-btn cookie-btn-gold" id="cookieAccept" data-i18n="cookieAccept">Accept</button>
+  </div>
+</div>
+
 <!-- ═══════════════ FOOTER ═══════════════ -->
 <footer>
   <p>
@@ -1271,6 +1350,9 @@ footer a:hover { color: var(--gold-light); }
 <script>
 const T = {
   en: {
+    cookieText: "We would like to use analytics cookies to see how this page performs. Nothing is measured until you agree.",
+    cookieAccept: "Accept",
+    cookieDecline: "Decline",
     heroBadge: "A PsychicWorld Original",
     heroSub: "A 78-Card Tarot Deck",
     heroDesc: "Hand-illustrated by visionary artists. Rooted in ancient symbolism. Crafted for seekers who trust the cards to illuminate the path ahead.",
@@ -1363,6 +1445,9 @@ const T = {
     limitedNote: "Only 250 sets in this first edition run. Once they’re gone, they’re gone."
   },
   fr: {
+    cookieText: "Nous souhaitons utiliser des cookies de mesure pour comprendre la performance de cette page. Rien n'est mesuré sans votre accord.",
+    cookieAccept: "Accepter",
+    cookieDecline: "Refuser",
     heroBadge: "Un Original PsychicWorld",
     heroSub: "Un Jeu de Tarot de 78 Cartes",
     heroDesc: "Illustré à la main par des artistes visionnaires. Ancré dans un symbolisme ancestral. Conçu pour les chercheurs qui font confiance aux cartes pour éclairer leur chemin.",
@@ -1455,6 +1540,9 @@ const T = {
     limitedNote: "Seulement 250 coffrets dans cette première édition. Une fois épuisés, c’est terminé."
   },
   nl: {
+    cookieText: "We gebruiken graag analytische cookies om te zien hoe deze pagina presteert. Er wordt niets gemeten zonder uw toestemming.",
+    cookieAccept: "Accepteren",
+    cookieDecline: "Weigeren",
     heroBadge: "Een PsychicWorld Origineel",
     heroSub: "Een Tarotdeck van 78 Kaarten",
     heroDesc: "Met de hand geïllustreerd door visionaire kunstenaars. Geworteld in eeuwenoud symbolisme. Gemaakt voor zoekers die de kaarten vertrouwen om hun pad te verlichten.",
@@ -1643,8 +1731,13 @@ function initCommerce() {
   btn && btn.addEventListener('click', e => {
     if (btn.getAttribute('data-noop')) {          // no link yet → focus capture
       e.preventDefault();
+      ga('select_item', { item_list_name: 'preorder_cta_no_link',
+                          items: [Object.assign({}, ITEM, { item_variant: selectedEdition() })] });
       document.getElementById('capture').classList.remove('is-hidden');
       document.getElementById('cf_email').focus();
+    } else {
+      ga('begin_checkout', { currency: 'EUR', value: ITEM.price,
+                             items: [Object.assign({}, ITEM, { item_variant: selectedEdition() })] });
     }
   });
 
@@ -1663,7 +1756,9 @@ function initCommerce() {
     setMsg('', 'captureSending');
     mcSubscribe(email, res => {
       btnEl.disabled = false;
-      if (res === 'ok')        { setMsg('ok',  'captureOk');   form.reset(); }
+      if (res === 'ok')        { setMsg('ok',  'captureOk');   form.reset();
+                                 ga('generate_lead', { currency: 'EUR', value: ITEM.price,
+                                   method: 'waitlist', edition: selectedEdition() }); }
       else if (res === 'dupe') { setMsg('ok',  'captureDupe'); form.reset(); }
       else                     { setMsg('err', 'captureErr');
                                  console.warn('[legends] capture failed:', res,
@@ -1681,6 +1776,7 @@ const CARD_SLUGS = {
   nl: ["0-de-dwaas","1-de-magier","2-de-hogepriesteres","3-de-keizerin","4-de-keizer","5-de-hogepriester","6-de-geliefden","7-de-zegewagen","8-de-kracht","9-de-kluizenaar","10-het-rad-van-fortuin","11-de-gerechtigheid","12-de-gehangene","13-de-dood","14-de-gematigdheid","15-de-duivel","16-de-toren","17-de-ster","18-de-maan","19-de-zon","20-het-oordeel","21-de-wereld"]
 };
 function setLang(lang) {
+  if (lang !== CURRENT_LANG) ga('select_content', { content_type: 'language', item_id: lang });
   CURRENT_LANG = lang;
   document.documentElement.lang = lang;
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent.trim().toLowerCase() === lang));
@@ -1709,7 +1805,79 @@ function setLang(lang) {
   });
 }
 
-document.addEventListener('DOMContentLoaded', initCommerce);
+/* ================================================================
+   ANALYTICS, GATED ON CONSENT
+   gtag.js is not fetched at all until the visitor accepts, so a
+   visitor who declines generates zero requests to Google and zero
+   cookies. The Consent Mode v2 defaults declared in <head> mean the
+   later 'update' is treated as a granted upgrade rather than a fresh
+   session. Meta Pixel, when its ID arrives, belongs in grantConsent()
+   alongside loadGA() so one banner governs both.
+   ================================================================ */
+const GA_ID       = 'G-31WLZW9T5Q';
+const CONSENT_KEY = 'lotr_consent_v1';
+const ITEM = {
+  item_id: 'LOTR-FE-78',
+  item_name: 'Legends of the Realm, First Edition',
+  item_brand: 'PsychicWorld',
+  item_category: 'Tarot deck',
+  price: 39.95,
+  quantity: 1
+};
+let GA_READY = false;
+
+function ga(name, params) {
+  if (!GA_READY) return;
+  gtag('event', name, params || {});
+}
+
+function loadGA() {
+  if (GA_READY || !GA_ID) return;
+  GA_READY = true;
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+  document.head.appendChild(s);
+  gtag('js', new Date());
+  gtag('config', GA_ID);
+  ga('view_item', { currency: 'EUR', value: ITEM.price, items: [Object.assign({}, ITEM)] });
+}
+
+function grantConsent() {
+  gtag('consent', 'update', {
+    ad_storage: 'granted',
+    ad_user_data: 'granted',
+    ad_personalization: 'granted',
+    analytics_storage: 'granted'
+  });
+  loadGA();
+}
+
+function readConsent()   { try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; } }
+function writeConsent(v) { try { localStorage.setItem(CONSENT_KEY, v); } catch (e) {} }
+
+function initConsent() {
+  const bar = document.getElementById('cookieBar');
+  const stored = readConsent();
+  if (stored === 'granted') { grantConsent(); return; }
+  if (stored === 'denied')  { return; }
+  if (!bar) return;
+  bar.hidden = false;
+  const pad = () => { document.body.style.paddingBottom = bar.offsetHeight + 'px'; };
+  pad();
+  window.addEventListener('resize', pad);
+  const close = () => {
+    bar.hidden = true;
+    document.body.style.paddingBottom = '';
+    window.removeEventListener('resize', pad);
+  };
+  const acc = document.getElementById('cookieAccept');
+  const dec = document.getElementById('cookieDecline');
+  acc && acc.addEventListener('click', () => { writeConsent('granted'); close(); grantConsent(); });
+  dec && dec.addEventListener('click', () => { writeConsent('denied');  close(); });
+}
+
+document.addEventListener('DOMContentLoaded', () => { initCommerce(); initConsent(); });
 </script>
 
 </body>
