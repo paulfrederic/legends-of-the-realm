@@ -41,7 +41,7 @@
   "manufacturer": {
     "@type": "Organization",
     "name": "Consulto B.V.",
-    "url": "https://psychicworld.com",
+    "url": "https://www.psychicworld.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Amsterdam",
@@ -103,8 +103,8 @@
   "publisher": {
     "@type": "Organization",
     "name": "Consulto B.V.",
-    "url": "https://psychicworld.com",
-    "logo": "https://psychicworld.com/logo.png"
+    "url": "https://www.psychicworld.com",
+    "logo": "https://thelegendsoftherealm.com/icons/icon-512.png"
   },
   "breadcrumb": {
     "@type": "BreadcrumbList",
@@ -640,18 +640,6 @@ footer a:hover { color: var(--gold-light); }
 .about-grid { min-width: 0; }
 .about-text, .about-visual { min-width: 0; }
 
-/* ─── mobile: reveal the full Major Arcana on demand ─── */
-.arcana-more { display: none; }
-@media (max-width: 700px) {
-  .arcana-grid.is-collapsed .arcana-card:nth-child(n+9) { display: none; }
-  .arcana-more {
-    display: inline-block; margin: 1.75rem auto 0; padding: 0.8rem 1.6rem;
-    background: transparent; border: 1px solid var(--gold); border-radius: 5px;
-    color: var(--gold-pale); font-family: 'Cinzel', serif; font-size: 0.78rem;
-    letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;
-  }
-  .arcana-more:hover { background: var(--gold-glow); }
-}
 
 /* ─── LANGUAGE SWITCHER ─── */
 .lang-switcher {
@@ -797,20 +785,14 @@ footer a:hover { color: var(--gold-light); }
   <div class="inner">
     <div class="ornament">✦ ✦ ✦</div>
     <h2 class="section-title" data-i18n="arcanaTitle">The Major Arcana</h2>
-    <p class="section-lead" data-i18n="arcanaLead">22 cards charting the soul's great journey</p>
+    <p class="section-lead" data-i18n="arcanaLead">Six of the twenty-two cards charting the soul's great journey</p>
 
-    <div class="arcana-grid is-collapsed" id="arcanaGrid">
+    <div class="arcana-grid" id="arcanaGrid">
       <div class="arcana-card has-image">
         <img class="card-img" data-ci="0" src="cards/sm/en/major-arcana/0-the-fool.jpg" alt="The Fool" width="340" height="582">
         <span class="card-num">0</span>
         <span class="card-name" data-i18n="c0Name">The Fool</span>
         <span class="card-meaning" data-i18n="c0Mean">New beginnings, innocence, a leap of faith</span>
-      </div>
-      <div class="arcana-card has-image">
-        <img class="card-img" data-ci="1" src="cards/sm/en/major-arcana/1-the-magician.jpg" alt="The Magician" width="340" height="582">
-        <span class="card-num">I</span>
-        <span class="card-name" data-i18n="c1Name">The Magician</span>
-        <span class="card-meaning" data-i18n="c1Mean">Manifestation, willpower, resourcefulness</span>
       </div>
       <div class="arcana-card has-image">
         <img class="card-img" data-ci="2" src="cards/sm/en/major-arcana/2-the-high-priestess.jpg" alt="The High Priestess" width="340" height="582">
@@ -819,121 +801,30 @@ footer a:hover { color: var(--gold-light); }
         <span class="card-meaning" data-i18n="c2Mean">Intuition, mystery, the subconscious</span>
       </div>
       <div class="arcana-card has-image">
-        <img class="card-img" data-ci="3" src="cards/sm/en/major-arcana/3-the-empress.jpg" alt="The Empress" width="340" height="582">
-        <span class="card-num">III</span>
-        <span class="card-name" data-i18n="c3Name">The Empress</span>
-        <span class="card-meaning" data-i18n="c3Mean">Abundance, nurturing, sensual beauty</span>
-      </div>
-      <div class="arcana-card has-image">
-        <img class="card-img" data-ci="4" src="cards/sm/en/major-arcana/4-the-emperor.jpg" alt="The Emperor" width="340" height="582" loading="lazy">
-        <span class="card-num">IV</span>
-        <span class="card-name" data-i18n="c4Name">The Emperor</span>
-        <span class="card-meaning" data-i18n="c4Mean">Authority, structure, steady command</span>
-      </div>
-      <div class="arcana-card has-image">
-        <img class="card-img" data-ci="5" src="cards/sm/en/major-arcana/5-the-hierophant.jpg" alt="The Hierophant" width="340" height="582" loading="lazy">
-        <span class="card-num">V</span>
-        <span class="card-name" data-i18n="c5Name">The Hierophant</span>
-        <span class="card-meaning" data-i18n="c5Mean">Tradition, teaching, spiritual guidance</span>
-      </div>
-      <div class="arcana-card has-image">
-        <img class="card-img" data-ci="6" src="cards/sm/en/major-arcana/6-the-lovers.jpg" alt="The Lovers" width="340" height="582" loading="lazy">
+        <img class="card-img" data-ci="6" src="cards/sm/en/major-arcana/6-the-lovers.jpg" alt="The Lovers" width="340" height="582">
         <span class="card-num">VI</span>
         <span class="card-name" data-i18n="c6Name">The Lovers</span>
         <span class="card-meaning" data-i18n="c6Mean">Union, choices, alignment of values</span>
       </div>
       <div class="arcana-card has-image">
-        <img class="card-img" data-ci="7" src="cards/sm/en/major-arcana/7-the-chariot.jpg" alt="The Chariot" width="340" height="582" loading="lazy">
-        <span class="card-num">VII</span>
-        <span class="card-name" data-i18n="c7Name">The Chariot</span>
-        <span class="card-meaning" data-i18n="c7Mean">Drive, focus, forward momentum</span>
-      </div>
-      <div class="arcana-card has-image">
-        <img class="card-img" data-ci="8" src="cards/sm/en/major-arcana/8-strength.jpg" alt="Strength" width="340" height="582" loading="lazy">
-        <span class="card-num">VIII</span>
-        <span class="card-name" data-i18n="c8Name">Strength</span>
-        <span class="card-meaning" data-i18n="c8Mean">Courage, patience, gentle power</span>
-      </div>
-      <div class="arcana-card has-image">
-        <img class="card-img" data-ci="9" src="cards/sm/en/major-arcana/9-the-hermit.jpg" alt="The Hermit" width="340" height="582" loading="lazy">
-        <span class="card-num">IX</span>
-        <span class="card-name" data-i18n="c9Name">The Hermit</span>
-        <span class="card-meaning" data-i18n="c9Mean">Solitude, reflection, inner searching</span>
-      </div>
-      <div class="arcana-card has-image">
-        <img class="card-img" data-ci="10" src="cards/sm/en/major-arcana/10-wheel-of-fortune.jpg" alt="Wheel of Fortune" width="340" height="582" loading="lazy">
-        <span class="card-num">X</span>
-        <span class="card-name" data-i18n="c10Name">Wheel of Fortune</span>
-        <span class="card-meaning" data-i18n="c10Mean">Cycles, turning points, destiny</span>
-      </div>
-      <div class="arcana-card has-image">
-        <img class="card-img" data-ci="11" src="cards/sm/en/major-arcana/11-justice.jpg" alt="Justice" width="340" height="582" loading="lazy">
-        <span class="card-num">XI</span>
-        <span class="card-name" data-i18n="c11Name">Justice</span>
-        <span class="card-meaning" data-i18n="c11Mean">Truth, balance, consequence</span>
-      </div>
-      <div class="arcana-card has-image">
-        <img class="card-img" data-ci="12" src="cards/sm/en/major-arcana/12-the-hanged-man.jpg" alt="The Hanged Man" width="340" height="582" loading="lazy">
-        <span class="card-num">XII</span>
-        <span class="card-name" data-i18n="c12Name">The Hanged Man</span>
-        <span class="card-meaning" data-i18n="c12Mean">Suspension, surrender, new perspective</span>
-      </div>
-      <div class="arcana-card has-image">
-        <img class="card-img" data-ci="13" src="cards/sm/en/major-arcana/13-death.jpg" alt="Death" width="340" height="582" loading="lazy">
-        <span class="card-num">XIII</span>
-        <span class="card-name" data-i18n="c13Name">Death</span>
-        <span class="card-meaning" data-i18n="c13Mean">Endings, transformation, release</span>
-      </div>
-      <div class="arcana-card has-image">
-        <img class="card-img" data-ci="14" src="cards/sm/en/major-arcana/14-temperance.jpg" alt="Temperance" width="340" height="582" loading="lazy">
-        <span class="card-num">XIV</span>
-        <span class="card-name" data-i18n="c14Name">Temperance</span>
-        <span class="card-meaning" data-i18n="c14Mean">Balance, moderation, patient blending</span>
-      </div>
-      <div class="arcana-card has-image">
-        <img class="card-img" data-ci="15" src="cards/sm/en/major-arcana/15-the-devil.jpg" alt="The Devil" width="340" height="582" loading="lazy">
-        <span class="card-num">XV</span>
-        <span class="card-name" data-i18n="c15Name">The Devil</span>
-        <span class="card-meaning" data-i18n="c15Mean">Attachment, temptation, self-imposed chains</span>
-      </div>
-      <div class="arcana-card has-image">
-        <img class="card-img" data-ci="16" src="cards/sm/en/major-arcana/16-the-tower.jpg" alt="The Tower" width="340" height="582" loading="lazy">
-        <span class="card-num">XVI</span>
-        <span class="card-name" data-i18n="c16Name">The Tower</span>
-        <span class="card-meaning" data-i18n="c16Mean">Upheaval, sudden truth, collapse</span>
-      </div>
-      <div class="arcana-card has-image">
-        <img class="card-img" data-ci="17" src="cards/sm/en/major-arcana/17-the-star.jpg" alt="The Star" width="340" height="582" loading="lazy">
+        <img class="card-img" data-ci="17" src="cards/sm/en/major-arcana/17-the-star.jpg" alt="The Star" width="340" height="582">
         <span class="card-num">XVII</span>
         <span class="card-name" data-i18n="c17Name">The Star</span>
         <span class="card-meaning" data-i18n="c17Mean">Hope, renewal, spiritual connection</span>
       </div>
       <div class="arcana-card has-image">
-        <img class="card-img" data-ci="18" src="cards/sm/en/major-arcana/18-the-moon.jpg" alt="The Moon" width="340" height="582" loading="lazy">
+        <img class="card-img" data-ci="18" src="cards/sm/en/major-arcana/18-the-moon.jpg" alt="The Moon" width="340" height="582">
         <span class="card-num">XVIII</span>
         <span class="card-name" data-i18n="c18Name">The Moon</span>
         <span class="card-meaning" data-i18n="c18Mean">Illusion, intuition, the unconscious</span>
       </div>
       <div class="arcana-card has-image">
-        <img class="card-img" data-ci="19" src="cards/sm/en/major-arcana/19-the-sun.jpg" alt="The Sun" width="340" height="582" loading="lazy">
-        <span class="card-num">XIX</span>
-        <span class="card-name" data-i18n="c19Name">The Sun</span>
-        <span class="card-meaning" data-i18n="c19Mean">Joy, clarity, vitality</span>
-      </div>
-      <div class="arcana-card has-image">
-        <img class="card-img" data-ci="20" src="cards/sm/en/major-arcana/20-judgment.jpg" alt="Judgment" width="340" height="582" loading="lazy">
-        <span class="card-num">XX</span>
-        <span class="card-name" data-i18n="c20Name">Judgment</span>
-        <span class="card-meaning" data-i18n="c20Mean">Awakening, reckoning, a call to rise</span>
-      </div>
-      <div class="arcana-card has-image">
-        <img class="card-img" data-ci="21" src="cards/sm/en/major-arcana/21-the-world.jpg" alt="The World" width="340" height="582" loading="lazy">
+        <img class="card-img" data-ci="21" src="cards/sm/en/major-arcana/21-the-world.jpg" alt="The World" width="340" height="582">
         <span class="card-num">XXI</span>
         <span class="card-name" data-i18n="c21Name">The World</span>
         <span class="card-meaning" data-i18n="c21Mean">Completion, fulfilment, wholeness</span>
       </div>
     </div>
-    <button class="arcana-more" id="arcanaMore" data-i18n="showAll" aria-expanded="false">Show all 22 cards</button>
     </div>
   </div>
 </div>
@@ -1099,9 +990,7 @@ const T = {
     aboutP2: 'From <strong>The Fool’s</strong> first brave step into the unknown to <strong>The World’s</strong> radiant completion, each of the 78 cards tells a story through warm golden tones, deep shadows, and intricate detail that rewards every reading.',
     aboutP3: 'Created by the team behind <strong>PsychicWorld.com</strong> — the world’s leading live psychic guidance platform — this deck carries the energy of thousands of real readings, real seekers, and real transformations.',
     arcanaTitle: "The Major Arcana",
-    arcanaLead: "22 cards charting the soul’s great journey",
-    showAll: "Show all 22 cards",
-    showLess: "Show fewer cards",
+    arcanaLead: "Six of the twenty-two cards charting the soul’s great journey",
     c0Name: "The Fool", c0Mean: "New beginnings, innocence, a leap of faith",
     c1Name: "The Magician", c1Mean: "Manifestation, willpower, resourcefulness",
     c2Name: "The High Priestess", c2Mean: "Intuition, mystery, the subconscious",
@@ -1175,9 +1064,7 @@ const T = {
     aboutP2: 'Du premier pas courageux du <strong>Mat</strong> vers l’inconnu à l’accomplissement radieux du <strong>Monde</strong>, chacune des 78 cartes raconte une histoire à travers des tons dorés chaleureux, des ombres profondes et des détails minutieux qui enrichissent chaque tirage.',
     aboutP3: 'Créé par l’équipe derrière <strong>PsychicWorld.com</strong> — la première plateforme mondiale de guidance psychique en direct — ce jeu porte l’énergie de milliers de tirages réels, de vrais chercheurs et de vraies transformations.',
     arcanaTitle: "Les Arcanes Majeurs",
-    arcanaLead: "22 cartes traçant le grand voyage de l’âme",
-    showAll: "Voir les 22 cartes",
-    showLess: "Voir moins de cartes",
+    arcanaLead: "Six des vingt-deux cartes qui tracent le grand voyage de l’âme",
     c0Name: "Le Fou", c0Mean: "Nouveaux départs, innocence, un saut dans l’inconnu",
     c1Name: "Le Bateleur", c1Mean: "Manifestation, volonté, ingéniosité",
     c2Name: "La Papesse", c2Mean: "Intuition, mystère, l’inconscient",
@@ -1251,9 +1138,7 @@ const T = {
     aboutP2: 'Van de eerste moedige stap van <strong>De Dwaas</strong> naar het onbekende tot de stralende voltooiing van <strong>De Wereld</strong> — elk van de 78 kaarten vertelt een verhaal door warme gouden tinten, diepe schaduwen en ingewikkelde details die elke lezing verrijken.',
     aboutP3: 'Gecreëerd door het team achter <strong>PsychicWorld.com</strong> — het toonaangevende platform voor live paragnostische begeleiding — draagt dit deck de energie van duizenden echte lezingen, echte zoekers en echte transformaties.',
     arcanaTitle: "De Grote Arcana",
-    arcanaLead: "22 kaarten die de grote reis van de ziel in kaart brengen",
-    showAll: "Bekijk alle 22 kaarten",
-    showLess: "Toon minder kaarten",
+    arcanaLead: "Zes van de tweeëntwintig kaarten die de grote reis van de ziel uitstippelen",
     c0Name: "De Dwaas", c0Mean: "Nieuw begin, onschuld, een sprong in het diepe",
     c1Name: "De Magiër", c1Mean: "Manifestatie, wilskracht, vindingrijkheid",
     c2Name: "De Hogepriesteres", c2Mean: "Intuïtie, mysterie, het onderbewuste",
@@ -1443,16 +1328,6 @@ function initCommerce() {
 
   refreshCommerce();
 
-  const grid = document.getElementById('arcanaGrid');
-  const more = document.getElementById('arcanaMore');
-  if (grid && more) {
-    more.addEventListener('click', () => {
-      const collapsed = grid.classList.toggle('is-collapsed');
-      more.setAttribute('aria-expanded', String(!collapsed));
-      more.textContent = t(collapsed ? 'showAll' : 'showLess');
-      if (collapsed) grid.scrollIntoView({behavior:'smooth', block:'start'});
-    });
-  }
 }
 
 const CARD_SLUGS = {
@@ -1472,9 +1347,6 @@ function setLang(lang) {
     const k = el.dataset.i18nPh;
     if (T[lang] && T[lang][k]) el.placeholder = T[lang][k];
   });
-  const _more = document.getElementById('arcanaMore'), _grid = document.getElementById('arcanaGrid');
-  if (_more && _grid) _more.textContent =
-    (T[lang] || T.en)[_grid.classList.contains('is-collapsed') ? 'showAll' : 'showLess'];
   const _picked = document.querySelector('input[name="edition"]:checked');
   if (_picked && !_picked.dataset.userSet) {
     const r = document.querySelector('input[name="edition"][value="' + lang + '"]');
