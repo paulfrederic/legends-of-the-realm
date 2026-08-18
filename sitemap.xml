@@ -1,38 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://www.thelegendsoftherealm.com/</loc>
     <lastmod>2026-08-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.thelegendsoftherealm.com/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.thelegendsoftherealm.com/nl"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.thelegendsoftherealm.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.thelegendsoftherealm.com/"/>
     <image:image>
       <image:loc>https://www.thelegendsoftherealm.com/og-image.jpg</image:loc>
-      <image:title>Legends of the Realm, a 78-card tarot deck</image:title>
+      <image:title>Legends of the Realm: A 78-Card Tarot Deck</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.thelegendsoftherealm.com/cards/lg/en/major-arcana/0-the-fool.jpg</image:loc>
-      <image:title>The Fool, Legends of the Realm tarot card</image:title>
+      <image:title>The Fool, Legends of the Realm</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.thelegendsoftherealm.com/cards/lg/en/major-arcana/2-the-high-priestess.jpg</image:loc>
-      <image:title>The High Priestess, Legends of the Realm tarot card</image:title>
+      <image:title>The High Priestess, Legends of the Realm</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.thelegendsoftherealm.com/cards/lg/en/major-arcana/6-the-lovers.jpg</image:loc>
-      <image:title>The Lovers, Legends of the Realm tarot card</image:title>
+      <image:title>The Lovers, Legends of the Realm</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.thelegendsoftherealm.com/cards/lg/en/major-arcana/17-the-star.jpg</image:loc>
-      <image:title>The Star, Legends of the Realm tarot card</image:title>
+      <image:title>The Star, Legends of the Realm</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.thelegendsoftherealm.com/cards/lg/en/major-arcana/18-the-moon.jpg</image:loc>
-      <image:title>The Moon, Legends of the Realm tarot card</image:title>
+      <image:title>The Moon, Legends of the Realm</image:title>
     </image:image>
     <image:image>
       <image:loc>https://www.thelegendsoftherealm.com/cards/lg/en/major-arcana/21-the-world.jpg</image:loc>
-      <image:title>The World, Legends of the Realm tarot card</image:title>
+      <image:title>The World, Legends of the Realm</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.thelegendsoftherealm.com/nl</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.thelegendsoftherealm.com/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.thelegendsoftherealm.com/nl"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.thelegendsoftherealm.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.thelegendsoftherealm.com/"/>
+    <image:image>
+      <image:loc>https://www.thelegendsoftherealm.com/og-image.jpg</image:loc>
+      <image:title>Legends of the Realm: een tarotdeck van 78 kaarten</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.thelegendsoftherealm.com/cards/lg/nl/major-arcana/0-de-dwaas.jpg</image:loc>
+      <image:title>De Dwaas, Legends of the Realm</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.thelegendsoftherealm.com/cards/lg/nl/major-arcana/2-de-hogepriesteres.jpg</image:loc>
+      <image:title>De Hogepriesteres, Legends of the Realm</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.thelegendsoftherealm.com/cards/lg/nl/major-arcana/6-de-geliefden.jpg</image:loc>
+      <image:title>De Geliefden, Legends of the Realm</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.thelegendsoftherealm.com/cards/lg/nl/major-arcana/17-de-ster.jpg</image:loc>
+      <image:title>De Ster, Legends of the Realm</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.thelegendsoftherealm.com/cards/lg/nl/major-arcana/18-de-maan.jpg</image:loc>
+      <image:title>De Maan, Legends of the Realm</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.thelegendsoftherealm.com/cards/lg/nl/major-arcana/21-de-wereld.jpg</image:loc>
+      <image:title>De Wereld, Legends of the Realm</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.thelegendsoftherealm.com/fr</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.thelegendsoftherealm.com/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://www.thelegendsoftherealm.com/nl"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://www.thelegendsoftherealm.com/fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.thelegendsoftherealm.com/"/>
+    <image:image>
+      <image:loc>https://www.thelegendsoftherealm.com/og-image.jpg</image:loc>
+      <image:title>Legends of the Realm : un jeu de tarot de 78 cartes</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.thelegendsoftherealm.com/cards/lg/fr/major-arcana/0-le-fou.jpg</image:loc>
+      <image:title>Le Fou, Legends of the Realm</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.thelegendsoftherealm.com/cards/lg/fr/major-arcana/2-la-papesse.jpg</image:loc>
+      <image:title>La Papesse, Legends of the Realm</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.thelegendsoftherealm.com/cards/lg/fr/major-arcana/6-l-amoureux.jpg</image:loc>
+      <image:title>L'Amoureux, Legends of the Realm</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.thelegendsoftherealm.com/cards/lg/fr/major-arcana/17-l-etoile.jpg</image:loc>
+      <image:title>L'Étoile, Legends of the Realm</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.thelegendsoftherealm.com/cards/lg/fr/major-arcana/18-la-lune.jpg</image:loc>
+      <image:title>La Lune, Legends of the Realm</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.thelegendsoftherealm.com/cards/lg/fr/major-arcana/21-le-monde.jpg</image:loc>
+      <image:title>Le Monde, Legends of the Realm</image:title>
     </image:image>
   </url>
 </urlset>
