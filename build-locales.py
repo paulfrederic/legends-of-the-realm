@@ -214,6 +214,8 @@ def rewrite_head(h, lang, T, slugs):
     h = sub1(r'<title>.*?</title>', '<title>%s</title>' % TITLE[lang], 'title')
     h = sub1(r'<meta name="description" content="[^"]*">',
              '<meta name="description" content="%s">' % DESC[lang], 'description')
+    # strip any existing cluster first, otherwise re-running duplicates it
+    h = re.sub(r'\n?<link rel="alternate" hreflang="[^"]*" href="[^"]*">', '', h)
     h = sub1(r'<link rel="canonical" href="[^"]*">',
              '<link rel="canonical" href="%s">\n%s' % (URL[lang], hreflang_block()), 'canonical')
 
@@ -252,6 +254,19 @@ def rewrite_head(h, lang, T, slugs):
                r'<a class="lang-btn[^"]*" href="/fr" hreflang="fr" lang="fr">FR</a>\s*'
                r'<a class="lang-btn[^"]*" href="/nl" hreflang="nl" lang="nl">NL</a>',
                LANG_LINKS % flags, h, count=1)
+
+    # initConsent() runs during the build render and sets bar.hidden = false,
+    # which serializes as the hidden ATTRIBUTE being stripped. Ship that and
+    # every visitor who already declined sees the banner again on every load.
+    # Only caught by testing on a real origin, since localStorage needs one.
+    h, n = re.subn(r'(<div class="cookie-bar" id="cookieBar"(?:(?!>).)*?)\s+hidden((?:(?!>).)*>)',
+                   r'\1\2', h)
+    h, n2 = re.subn(r'(<div class="cookie-bar" id="cookieBar")', r'\1 hidden', h, count=1)
+    if n2 != 1:
+        sys.exit('could not restore hidden on the consent banner for ' + lang)
+
+    # pad() writes an inline padding-bottom on <body> while the banner shows
+    h = re.sub(r'(<body[^>]*?)\s+style="padding-bottom:[^"]*"', r'\1', h)
 
     # the checked edition radio is a DOM property, so it does not survive
     # serialization. Put the attribute back on the right one.

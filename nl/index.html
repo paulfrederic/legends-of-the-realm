@@ -1208,7 +1208,7 @@ body { transition: padding-bottom 0.2s; }
 .lang-btn{display:inline-block;text-decoration:none;font-family:'Cinzel',serif;line-height:1;}
 </style>
 </head>
-<body style="padding-bottom: 83px;">
+<body>
 
 <!-- ═══════════════ LANGUAGE SWITCHER ═══════════════ -->
 <div class="lang-switcher">
@@ -1477,7 +1477,7 @@ body { transition: padding-bottom 0.2s; }
 </div>
 
 <!-- CONSENT BANNER -->
-<div class="cookie-bar" id="cookieBar" role="region" aria-label="Cookie choice">
+<div class="cookie-bar" id="cookieBar" hidden role="region" aria-label="Cookie choice">
   <p class="cookie-bar-text" data-i18n="cookieText">We gebruiken graag analytische cookies om te zien hoe deze pagina presteert. Er wordt niets gemeten zonder uw toestemming.</p>
   <div class="cookie-bar-actions">
     <button type="button" class="cookie-btn cookie-btn-ghost" id="cookieDecline" data-i18n="cookieDecline">Weigeren</button>
@@ -1873,6 +1873,30 @@ function mcSubscribe(email, cb) {
   document.body.appendChild(s);
 }
 
+/* Stripe Payment Links complete checkout on Stripe's domain, so the browser
+   never sees the conversion and a client-side purchase event is impossible.
+   Pack the GA4 client_id and session_id into the link's client_reference_id
+   so /api/stripe-webhook can attribute the purchase back to this session
+   instead of it landing as a brand new direct visit.
+
+   client_reference_id allows only alphanumerics, dashes and underscores, so
+   the dot in the client_id becomes an underscore and the session_id is
+   appended after a dash. The webhook reverses exactly this. */
+function gaIds() {
+  const c = document.cookie;
+  const m = c.match(/(?:^|;\s*)_ga=GA\d\.\d\.(\d+\.\d+)/);
+  const s = c.match(/(?:^|;\s*)_ga_[A-Z0-9]+=GS\d\.\d\.s?(\d+)/);
+  return { cid: m ? m[1] : '', sid: s ? s[1] : '' };
+}
+
+function withGaRef(url) {
+  const { cid, sid } = gaIds();
+  if (!cid) return url;            // consent declined, nothing to stitch
+  const ref = cid.replace('.', '_') + (sid ? '-' + sid : '');
+  return url + (url.indexOf('?') === -1 ? '?' : '&')
+             + 'client_reference_id=' + encodeURIComponent(ref);
+}
+
 function initCommerce() {
   document.querySelectorAll('input[name="edition"]').forEach(r =>
     r.addEventListener('change', () => { r.dataset.userSet = '1'; refreshCommerce(); }));
@@ -1888,6 +1912,10 @@ function initCommerce() {
     } else {
       ga('begin_checkout', { currency: 'EUR', value: ITEM.price,
                              items: [Object.assign({}, ITEM, { item_variant: selectedEdition() })] });
+      /* Rebuild the href from the config each time so clicking twice cannot
+         append the parameter twice. */
+      const base = (PAYMENT_LINKS[selectedEdition()] || '').trim();
+      if (base) btn.href = withGaRef(base);
     }
   });
 
